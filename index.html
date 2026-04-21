@@ -3,770 +3,616 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scaler DSML 3.0 — Programme Map</title>
+<title>Scaler DSML 3.0 — Sales Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+  --bg:#f7f6f2;--card:#ffffff;--orange:#e8500a;--orange-light:#fff3ed;--orange-mid:#fddccc;
+  --text:#1a1714;--muted:#7a736c;--border:#e8e4de;--green:#1a6b45;--green-bg:#edf7f2;
+  --blue:#1a4fa0;--blue-bg:#edf2fc;--radius:14px;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fafaf9;color:#1c1917;padding:0 0 4rem}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.topbar{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;display:flex;align-items:center;overflow-x:auto}
+.topbar-logo{font-family:'DM Serif Display',serif;font-size:15px;color:var(--orange);padding:0 20px;white-space:nowrap;border-right:1px solid var(--border);height:50px;display:flex;align-items:center;flex-shrink:0}
+.tnav{display:flex;flex:1}
+.tb{flex:1;min-width:160px;font-size:12px;font-weight:500;padding:0 14px;height:50px;border:none;background:transparent;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;font-family:'DM Sans',sans-serif}
+.tb.on{color:var(--orange);border-bottom-color:var(--orange);background:var(--orange-light)}
+.sec{display:none;max-width:1200px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.sec.on{display:block}
+.sec-hd{font-family:'DM Serif Display',serif;font-size:26px;color:var(--text);margin-bottom:4px}
+.sec-sub{font-size:13px;color:var(--muted);margin-bottom:2rem;line-height:1.6;max-width:700px}
 
-/* NAV */
-.page-nav{display:flex;background:#fff;border-bottom:1px solid #e7e5e4;position:sticky;top:0;z-index:10;overflow-x:auto}
-.nav-btn{flex:1;min-width:180px;font-size:12px;font-weight:500;padding:13px 10px;border:none;background:transparent;color:#78716c;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s}
-.nav-btn.active{color:#c2410c;border-bottom-color:#ea580c}
+/* PROFILES */
+.profile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem}
+.pc-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.pc-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pc-title{font-size:14px;font-weight:600;line-height:1.2}
+.pc-role{font-size:11px;color:var(--muted);margin-top:2px}
+.info-box{border-radius:10px;padding:10px 13px;margin-bottom:10px}
+.info-box.gap{background:#fff8f0;border-left:3px solid var(--orange)}
+.info-box.gain{background:var(--green-bg);border-left:3px solid var(--green)}
+.info-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;opacity:.7}
+.info-txt{font-size:12px;line-height:1.65}
+.mod-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.mpill{font-size:10.5px;padding:3px 9px;border-radius:8px;background:var(--orange-light);color:#7c2d12;border:1px solid var(--orange-mid)}
+.jump{display:flex;align-items:center;gap:8px;padding-top:11px;border-top:1px solid var(--border);flex-wrap:wrap}
+.j-from{font-size:11.5px;color:var(--muted);background:var(--bg);padding:3px 10px;border-radius:6px;border:1px solid var(--border)}
+.j-arr{color:var(--orange);font-weight:700;font-size:16px}
+.j-to{font-size:11.5px;font-weight:600;color:var(--green);background:var(--green-bg);padding:3px 10px;border-radius:6px}
 
-/* SECTIONS */
-.section{display:none;padding:2rem 1.5rem}
-.section.active{display:block}
-.sec-title{font-size:18px;font-weight:600;color:#1c1917;margin-bottom:4px}
-.sec-sub{font-size:13px;color:#78716c;margin-bottom:1.5rem;line-height:1.6;max-width:720px}
-.lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#a8a29e;margin-bottom:4px}
-.divider{border:none;border-top:1px solid #f5f5f4;margin:10px 0}
+/* JOURNEY */
+.phase-block{margin-bottom:2.5rem}
+.phase-hd{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.phase-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:20px;flex-shrink:0}
+.ph-1{background:#fff3ed;color:#7c2d12}.ph-2{background:#eff6ff;color:#1e3a8a}.ph-3{background:#f5f3ff;color:#3b0764}
+.phase-title{font-family:'DM Serif Display',serif;font-size:18px}
+.phase-desc{font-size:12px;color:var(--muted);line-height:1.5;max-width:600px;margin-bottom:1.2rem}
+.jcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.3rem;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;cursor:pointer;transition:all .15s;margin-bottom:10px}
+.jcard:hover{border-color:#c9c2b8;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.jcard.open{border-color:var(--orange)}
+.jcard-num{width:34px;height:34px;border-radius:10px;background:var(--orange-light);color:var(--orange);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.jcard-name{font-size:14px;font-weight:600;line-height:1.3;margin-bottom:4px}
+.jcard-sub{font-size:11.5px;color:var(--muted)}
+.jcard-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.rpill{font-size:10px;padding:2px 7px;border-radius:6px;font-weight:500;white-space:nowrap}
+.rp-a{background:#fff3ed;color:#7c2d12}.rp-ds{background:#eff6ff;color:#1e3a8a}.rp-b{background:var(--green-bg);color:var(--green)}
+.jcard-toggle{font-size:18px;color:var(--muted);line-height:1;margin-top:2px;transition:transform .2s}
+.jcard.open .jcard-toggle{transform:rotate(180deg);color:var(--orange)}
+.jcard-expand{display:none;grid-column:1/-1;border-top:1px solid var(--border);padding-top:1rem;margin-top:.5rem;animation:fadeIn .2s ease}
+.jcard.open .jcard-expand{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.exp-grid{grid-template-columns:1fr}}
+.exp-panel{border-radius:10px;padding:11px 14px}
+.exp-panel.biz{background:#fffbf5;border:1px solid #f5dfc0}
+.exp-panel.script{background:#f0fdf4;border:1px solid #bbf7d0}
+.exp-panel.skills{background:#f0f4ff;border:1px solid #c7d7fd}
+.exp-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px}
+.exp-txt{font-size:12.5px;line-height:1.7;color:#2a2420}
 
-/* BADGES */
-.badge{font-size:11px;font-weight:500;padding:3px 9px;border-radius:10px;white-space:nowrap;flex-shrink:0}
-.b-orange{background:#ffedd5;color:#7c2d12}
-.b-sky{background:#e0f2fe;color:#0c4a6e}
-.b-indigo{background:#e0e7ff;color:#1e1b4b}
-.b-violet{background:#f5f3ff;color:#3b0764}
-.b-rose{background:#ffe4e6;color:#881337}
-.b-purple{background:#fae8ff;color:#3b0764}
-.b-teal{background:#ccfbf1;color:#134e4a}
-.b-amber{background:#fef3c7;color:#451a03}
-.b-slate{background:#f1f5f9;color:#334155}
-.b-new{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;font-size:10px;padding:2px 7px}
-.b-elective{background:#f0fdf4;color:#14532d;border:1px solid #bbf7d0;font-size:10px;padding:2px 7px}
-.b-core{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;font-size:10px;padding:2px 7px}
+/* ROLES TIMELINE */
+.roles-timeline{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.rt-hd{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:.4rem}
+.rt-sub{font-size:12.5px;color:var(--muted);margin-bottom:1.2rem;line-height:1.5}
+.rt-track-sel{display:flex;gap:8px;margin-bottom:1.5rem}
+.rtb{font-size:12px;padding:6px 18px;border-radius:20px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-weight:500;transition:all .15s;font-family:'DM Sans',sans-serif}
+.rtb.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.rt-flow{display:none}
+.rt-flow.on{display:flex;flex-direction:column;gap:0}
+.rt-stage{display:grid;grid-template-columns:200px 1fr;position:relative;align-items:flex-start}
+.rt-connector{position:absolute;left:199px;top:32px;bottom:-1px;width:2px;background:var(--border)}
+.rt-stage:last-child .rt-connector{display:none}
+.rt-left{padding:12px 24px 24px 0;text-align:right;position:relative}
+.rt-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--orange);background:#fff;position:absolute;right:-8px;top:14px;z-index:2}
+.rt-dot.filled{background:var(--orange)}
+.rt-phase-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:2px}
+.rt-mod-name{font-size:11.5px;font-weight:600;color:var(--text);line-height:1.3}
+.rt-new-tag{font-size:8px;font-weight:700;text-transform:uppercase;padding:1px 5px;border-radius:4px;background:var(--orange-light);color:var(--orange);margin-left:4px}
+.rt-right{padding:8px 0 20px 28px}
+.rt-role-cards{display:flex;flex-wrap:wrap;gap:7px}
+.rt-role-card{background:#fff;border:1px solid var(--border);border-radius:9px;padding:6px 12px}
+.rt-role-card strong{display:block;color:var(--text);font-size:12px;margin-bottom:1px}
+.rt-role-card span{color:var(--muted);font-size:10px}
 
-/* ══ TAB 1 — PROFILES ══ */
-.profile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
-.pc{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:1.1rem}
-.pc-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.pc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.pc-name{font-size:14px;font-weight:600;color:#1c1917;line-height:1.2}
-.pc-sub{font-size:11px;color:#a8a29e;margin-top:2px}
-.gap-box{background:#fff7ed;border:1px solid #fed7aa;border-left:3px solid #f97316;border-radius:8px;padding:9px 11px;margin-bottom:8px}
-.gap-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#9a3412;margin-bottom:3px}
-.gap-txt{font-size:12px;color:#431407;line-height:1.6}
-.gain-box{background:#f0fdf4;border:1px solid #bbf7d0;border-left:3px solid #22c55e;border-radius:8px;padding:9px 11px;margin-bottom:10px}
-.gain-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#14532d;margin-bottom:3px}
-.gain-txt{font-size:12px;color:#14532d;line-height:1.6}
-.mp-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#a8a29e;margin-bottom:5px}
-.mp-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
-.mpill{font-size:11px;padding:3px 9px;border-radius:10px;background:#ffedd5;color:#7c2d12;border:1px solid #fed7aa}
-.jump-row{display:flex;align-items:center;gap:8px;padding-top:10px;border-top:1px solid #f5f5f4;flex-wrap:wrap}
-.jump-from{font-size:12px;color:#78716c;background:#fafaf9;padding:3px 9px;border-radius:6px;border:1px solid #e7e5e4}
-.jump-arrow{font-size:15px;color:#ea580c;font-weight:700}
-.jump-to{font-size:12px;font-weight:600;color:#14532d;background:#dcfce7;padding:3px 9px;border-radius:6px}
+/* MODULES TAB */
+.mod-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.mf{font-size:11.5px;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-weight:500;transition:all .15s;font-family:'DM Sans',sans-serif}
+.mf.on,.mf:hover{color:var(--text);border-color:#999;background:#f5f4f0}
+.mod-detail{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:2rem;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.mod-header{padding:1.4rem 1.6rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;background:#fafaf8}
+.mod-num-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:3px}
+.mod-title{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.2;margin-bottom:8px}
+.mod-meta{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.tag{font-size:10.5px;padding:2px 9px;border-radius:7px;font-weight:500}
+.tag-p1{background:#fff3ed;color:#7c2d12}.tag-p2{background:#eff6ff;color:#1e3a8a}.tag-p3{background:#f5f3ff;color:#3b0764}
+.tag-elective{background:var(--green-bg);color:var(--green);border:1px solid #a7f3d0}
+.tag-core{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.tag-new{background:#fff3ed;color:var(--orange);border:1px solid var(--orange-mid)}
+.mod-tools-box{font-size:11.5px;color:var(--muted);line-height:1.5;max-width:260px;text-align:right}
+.mod-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:700px){.mod-body{grid-template-columns:1fr}}
+.mod-col{padding:1.4rem 1.6rem}
+.mod-col+.mod-col{border-left:1px solid var(--border)}
+.col-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.8rem}
+.story-box{background:#fffbf5;border-radius:10px;padding:13px 15px;margin-bottom:12px;border:1px solid #f5dfc0}
+.story-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#9a4a0a;margin-bottom:7px}
+.story-txt{font-size:13px;line-height:1.8;color:#2a1f14}
+.analogy-box{background:#f8f4ff;border-radius:10px;padding:11px 14px;margin-bottom:14px;border:1px solid #ddd6fe}
+.analogy-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5b21b6;margin-bottom:5px}
+.analogy-txt{font-size:12.5px;line-height:1.7;color:#2a1f40}
+.outcome-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.outcome-list li{font-size:12.5px;line-height:1.6;padding-left:18px;position:relative}
+.outcome-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;font-size:11px;top:2px}
+.script-box{background:#f0fdf4;border-radius:10px;padding:14px 16px;border:1px solid #bbf7d0;margin-bottom:16px}
+.script-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#14532d;margin-bottom:8px}
+.script-txt{font-size:13px;line-height:1.8;color:#1a3a28;font-style:italic}
+.job-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.job-chip{background:#fff;border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:500}
+.mod-footer{display:flex;justify-content:space-between;padding:1rem 1.6rem;border-top:1px solid var(--border);background:#fafaf8;gap:10px;flex-wrap:wrap}
+.mod-nav-btn{font-size:12px;font-weight:500;padding:7px 16px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mod-nav-btn:hover:not(:disabled){border-color:var(--orange);color:var(--orange)}
+.mod-nav-btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
+.mod-nav-btn.primary:hover:not(:disabled){background:#c94209}
 
-/* ══ TAB 2 — TRACKER ══ */
-.tracker-wrap{max-width:820px}
-.track-sel{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
-.tb{font-size:12px;padding:6px 16px;border-radius:20px;border:1px solid #d6d3d1;background:#fff;color:#78716c;cursor:pointer;font-weight:500;transition:all .15s}
-.tb.active{background:#ea580c;border-color:#ea580c;color:#fff}
-.slider-row{display:flex;align-items:center;gap:14px;margin-bottom:1rem}
-.slider-row label{font-size:13px;color:#78716c;white-space:nowrap}
-.slider-row input[type=range]{flex:1;accent-color:#ea580c}
-.stage-counter{font-size:13px;font-weight:600;color:#1c1917;min-width:100px;text-align:right}
-.prog-wrap{height:5px;background:#e7e5e4;border-radius:3px;margin-bottom:1.5rem;overflow:hidden}
-.prog-fill{height:100%;background:#ea580c;border-radius:3px;transition:width .3s}
-.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-@media(max-width:580px){.tgrid{grid-template-columns:1fr}}
-.tc{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:1rem 1.1rem}
-.tc-name{font-size:13px;font-weight:600;color:#1c1917;margin-bottom:10px;line-height:1.3}
-.skill-list{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-.sp{font-size:11px;padding:4px 10px;border-radius:10px;background:#fafaf9;border:1px solid #e7e5e4;color:#44403c;cursor:pointer;transition:all .15s;user-select:none}
-.sp:hover{border-color:#a8a29e;background:#f5f5f4}
-.sp.new{background:#ffedd5;border-color:#fdba74;color:#7c2d12;font-weight:500}
-.sp.new:hover{background:#fed7aa;border-color:#fb923c}
-.sp.ap{border-color:#ea580c!important;background:#ffedd5!important;color:#7c2d12!important;font-weight:500}
-.sp::after{content:'';display:inline-block;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-left:5px;vertical-align:middle;opacity:.5;transition:transform .2s}
-.sp.ap::after{transform:rotate(-135deg);opacity:.8}
-.ex-box{margin-top:10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:10px 13px;display:none;animation:fi .18s ease}
-.ex-box.on{display:block}
-@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
-.ex-name{font-size:12px;font-weight:600;color:#1c1917;margin-bottom:4px}
-.ex-text{font-size:13px;color:#44403c;line-height:1.65}
-.ex-close{font-size:11px;color:#a8a29e;cursor:pointer;margin-top:6px;display:inline-block}
-.ex-close:hover{color:#78716c}
-.job-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-.job-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#1c1917;line-height:1.4}
-.jdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px}
-.milestone{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:1rem 1.2rem}
-.m-text{font-size:13px;color:#1c1917;line-height:1.7;font-style:italic}
-.m-note{font-size:11px;color:#a8a29e;margin-top:6px}
-
-/* ══ TAB 3 — MODULES ══ */
-.phase-note{font-size:12px;background:#fff7ed;border-left:3px solid #f97316;padding:8px 12px;margin-bottom:1.25rem;color:#7c2d12;border-radius:0 4px 4px 0}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.25rem}
-.fb{font-size:12px;padding:5px 12px;border-radius:20px;border:1px solid #d6d3d1;background:#fff;color:#78716c;cursor:pointer;font-weight:500;transition:all .15s}
-.fb.active,.fb:hover{color:#1c1917;border-color:#78716c;background:#f5f5f4}
-.mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:2.5rem}
-.mc{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:1.1rem 1.2rem;transition:border-color .15s}
-.mc:hover{border-color:#a8a29e}
-.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
-.mc-phase{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#a8a29e;margin-bottom:2px}
-.mc-name{font-size:14px;font-weight:600;color:#1c1917;line-height:1.3}
-.mc-tools{font-size:11px;color:#a8a29e;margin:5px 0;line-height:1.4}
-.track-pill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:8px}
-.tp-all{background:#dcfce7;color:#14532d}
-.tp-analytics{background:#ffedd5;color:#7c2d12}
-.tp-ds{background:#e0e7ff;color:#3730a3}
-.tp-elective{background:#f5f3ff;color:#4c1d95}
-
-/* MODULE CARD SECTIONS */
-.mc-section{margin-bottom:9px}
-.mc-section-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#a8a29e;margin-bottom:3px}
-.mc-biz{font-size:12.5px;color:#1c1917;line-height:1.55;margin-bottom:4px}
-.mc-biz-icon{display:inline-block;margin-right:4px}
-.role-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:4px}
-.role-pill{font-size:10px;padding:2px 8px;border-radius:8px;font-weight:500}
-.rp-analyst{background:#ffedd5;color:#7c2d12}
-.rp-ds{background:#e0e7ff;color:#3730a3}
-.rp-both{background:#dcfce7;color:#14532d}
-.hook-box{background:#fafaf9;border-radius:8px;border:1px solid #e7e5e4;padding:8px 10px}
-.hook-txt{font-size:12px;color:#57534e;line-height:1.5;font-style:italic}
-
-/* PROJECT CARD */
-.cap-section-hdr{font-size:16px;font-weight:600;color:#1c1917;margin-bottom:4px}
-.cap-section-sub{font-size:13px;color:#78716c;margin-bottom:1rem;line-height:1.5;max-width:680px}
-.cap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.cc{background:#fff;border:1px solid #e7e5e4;border-radius:12px;padding:1.1rem 1.2rem}
-.cc-track{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.cc-name{font-size:14px;font-weight:600;color:#1c1917;margin-bottom:4px;line-height:1.3}
-.cc-biz{font-size:12px;color:#57534e;line-height:1.55;margin-bottom:8px;padding:7px 9px;background:#f8fafc;border-radius:6px;border-left:3px solid #cbd5e1}
-.cc-what{font-size:12px;color:#1c1917;line-height:1.55;margin-bottom:6px}
-.cc-pitch{font-size:12px;color:#1c1917;font-style:italic;line-height:1.5;background:#fafaf9;border-radius:6px;padding:7px 9px;border-left:3px solid #d6d3d1}
-.cc-roles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.pcard-top{height:5px}
+.pcard-body{padding:1.1rem 1.2rem}
+.pcard-track{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.pcard-name{font-size:14px;font-weight:600;margin-bottom:6px;line-height:1.3}
+.pcard-roles{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px}
+.pcard-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.pcard-txt{font-size:12px;line-height:1.65;color:#2a2420;margin-bottom:10px}
+.pcard-pitch{font-size:12px;line-height:1.6;font-style:italic;color:#1a1714;background:#fafaf8;padding:8px 10px;border-radius:7px;border-left:3px solid #d6d3d1}
 </style>
 </head>
 <body>
-
-<div class="page-nav">
-  <button class="nav-btn active" onclick="show('profiles',this)">Who is this for?</button>
-  <button class="nav-btn" onclick="show('tracker',this)">Skills and jobs by stage</button>
-  <button class="nav-btn" onclick="show('modules',this)">All modules and projects</button>
+<div class="topbar">
+  <div class="topbar-logo">Scaler DSML 3.0</div>
+  <div class="tnav">
+    <button class="tb on" onclick="showTab('profiles',this)">Who is this for?</button>
+    <button class="tb" onclick="showTab('journey',this)">Programme Journey</button>
+    <button class="tb" onclick="showTab('modules',this)">Module Deep Dives</button>
+    <button class="tb" onclick="showTab('projects',this)">Capstone Projects</button>
+  </div>
 </div>
 
-<!-- ══ TAB 1 — PROFILES ══ -->
-<div class="section active" id="section-profiles">
-  <div class="sec-title">Who is Scaler DSML 3.0 for?</div>
-  <p class="sec-sub">Five real buyer profiles — what each person is missing today, what this programme adds, and the exact career jump they are making. Use this to identify which pitch to run on any call.</p>
+<div class="sec on" id="sec-profiles">
+  <div class="sec-hd">Who is Scaler DSML 3.0 for?</div>
+  <p class="sec-sub">Five buyer profiles you will encounter on calls. Use these to immediately identify what pitch to run and which modules to highlight.</p>
   <div class="profile-grid" id="profile-grid"></div>
 </div>
 
-<!-- ══ TAB 2 — TRACKER ══ -->
-<div class="section" id="section-tracker">
-  <div class="sec-title">What do I have after each stage?</div>
-  <p class="sec-sub">Select your track, drag the slider to any stage, and see the skills you have built up and which roles you can target at that point. <strong>Tap any skill pill to get a plain-English explanation</strong> — orange pills are skills just gained in that stage.</p>
-  <div class="tracker-wrap">
-    <div class="track-sel">
-      <button class="tb active" onclick="setTrack('analytics',this)">Data Analytics track</button>
-      <button class="tb" onclick="setTrack('ds',this)">Data Science track</button>
+<div class="sec" id="sec-journey">
+  <div class="sec-hd">The Programme Journey</div>
+  <p class="sec-sub">Click any module card to expand the business context and your sales script. Scroll down for the full roles-by-track progression view.</p>
+  <div id="journey-content"></div>
+  <div class="roles-timeline">
+    <div class="rt-hd">Roles unlocked — by track</div>
+    <p class="rt-sub">How each track builds toward a different career destination, module by module.</p>
+    <div class="rt-track-sel">
+      <button class="rtb on" onclick="showTrack('analytics',this)">Data Analytics track</button>
+      <button class="rtb" onclick="showTrack('ds',this)">Data Science track</button>
     </div>
-    <div class="slider-row">
-      <label>Stage</label>
-      <input type="range" id="stage-slider" min="1" max="7" value="1" step="1" oninput="updateTracker(this.value)">
-      <span class="stage-counter" id="stage-label">Stage 1 of 7</span>
-    </div>
-    <div class="prog-wrap"><div class="prog-fill" id="prog-fill" style="width:14%"></div></div>
-    <div class="tgrid">
-      <div class="tc">
-        <div class="tc-name" id="tc-name">Advanced SQL and AI for data professionals</div>
-        <div class="lbl" style="margin-bottom:8px">Skills you now have <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:10px;color:#bbb">— tap any to explain</span></div>
-        <ul class="skill-list" id="skill-list"></ul>
-        <div class="ex-box" id="ex-box">
-          <div class="ex-name" id="ex-name"></div>
-          <div class="ex-text" id="ex-text"></div>
-          <span class="ex-close" onclick="closeEx()">close ✕</span>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="tc">
-          <div class="lbl" style="margin-bottom:8px">Roles you can now target</div>
-          <ul class="job-list" id="job-list"></ul>
-        </div>
-        <div class="milestone">
-          <div class="m-text" id="m-text"></div>
-          <div class="m-note" id="m-note"></div>
-        </div>
-      </div>
-    </div>
+    <div class="rt-flow on" id="rt-analytics"></div>
+    <div class="rt-flow" id="rt-ds"></div>
   </div>
 </div>
 
-<!-- ══ TAB 3 — MODULES ══ -->
-<div class="section" id="section-modules">
-  <div class="sec-title">All modules and capstone projects</div>
-  <p class="sec-sub">Every module explained with a real Zomato / Blinkit business problem, who in the company uses it, and the sales hook. Tap a filter to narrow by phase or track. Scroll down for capstone project breakdowns.</p>
-  <div class="phase-note">⚡ <strong>Core modules</strong> are included for all learners. <strong>Elective modules</strong> allow learners to specialise based on the career role they are targeting.</div>
-  <div class="filters">
-    <button class="fb active" onclick="filterMods('all',this)">All modules</button>
-    <button class="fb" onclick="filterMods('p1',this)">Phase 1 — Foundations</button>
-    <button class="fb" onclick="filterMods('p2',this)">Phase 2 — Intermediate</button>
-    <button class="fb" onclick="filterMods('p3',this)">Phase 3 — ML</button>
-    <button class="fb" onclick="filterMods('elective',this)">Electives only</button>
-    <button class="fb" onclick="filterMods('core',this)">Core only</button>
-  </div>
-  <div class="mod-grid" id="mod-grid"></div>
+<div class="sec" id="sec-modules">
+  <div class="sec-hd">Module Deep Dives</div>
+  <p class="sec-sub">Each module in full — the real-world business problem (Zomato context), an analogy to make it click, key outcomes, and your ready-to-use sales script.</p>
+  <div class="mod-tabs" id="mod-tabs"></div>
+  <div id="mod-details"></div>
+</div>
 
-  <div class="cap-section-hdr">Capstone Projects</div>
-  <p class="cap-section-sub">These are the portfolio projects learners build during the programme — not textbook exercises. Each one solves a real business problem, the way it is actually done at companies like Zomato, Blinkit, and Swiggy. This is what goes on a resume and gets noticed in interviews.</p>
-  <div class="cap-grid" id="cap-grid"></div>
+<div class="sec" id="sec-projects">
+  <div class="sec-hd">Capstone Projects</div>
+  <p class="sec-sub">Real systems built on real business problems. These go on a GitHub profile and get noticed in interviews.</p>
+  <div class="proj-grid" id="proj-grid"></div>
 </div>
 
 <script>
-/* ══ NAV ══ */
-function show(id,btn){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('section-'+id).classList.add('active');
-  btn.classList.add('active');
+function showTab(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('sec-'+id).classList.add('on');
+  btn.classList.add('on');
 }
 
-/* ══ SKILL DESCRIPTIONS ══ */
-const SD={
-'SQL querying for business decisions':'Writing database queries that directly answer real business questions — like "which Zomato restaurant areas had the highest order cancellations last week?" — rather than just extracting raw data. This is what separates analysts who are useful from those who just know the syntax.',
-'AI-assisted SQL generation':'Using AI tools to write, review, and fix SQL queries faster and with fewer errors. At Blinkit, an analyst uses AI to generate complex queries across their inventory database in minutes instead of hours — then validates the logic before running it.',
-'Query validation and debugging':'Checking that a query is actually answering the right question, not just running without errors. A query can execute perfectly and still give the wrong answer if the logic is off. This skill catches those errors before they reach a business report.',
-'Joins and aggregations':'Combining data from multiple tables and summarising it into useful numbers. At Zomato, this means joining the orders table, the restaurant table, and the delivery partner table to compute average delivery time per city — the metric the ops team reviews every morning.',
-'Subqueries and window functions':'Advanced SQL techniques that allow complex comparisons across rows — like "show me each restaurant\'s order count versus the city average." At Blinkit, window functions are used to rank delivery partners by performance within each zone for every week.',
-'Excel for data analysis':'Using Excel as a serious analysis tool — pivot tables, lookups, conditional logic, and structured data models. At Zomato, the business finance team uses Excel to model category P&Ls and scenario-test assumptions before presenting to leadership.',
-'Tableau and Power BI basics':'Building interactive dashboards that non-technical teams can explore themselves. At Blinkit, the dark store managers use a Power BI dashboard to track real-time inventory levels and order fill rates — without needing to ask the data team for a number.',
-'AI-generated insight narratives':'Using AI to automatically write the summary of what a dashboard is telling you. Instead of just showing a chart, the AI writes: "Order cancellations in Koramangala rose 18% this week, primarily in the 10pm–midnight window, likely driven by insufficient delivery partner availability." That is the value a data analyst adds.',
-'Dashboard design principles':'Knowing how to arrange information so the most important numbers are immediately visible and the right actions are obvious. A well-designed dashboard makes decisions faster. A poorly designed one requires a call to explain it.',
-'Data storytelling':'Turning data into a narrative that non-technical stakeholders can act on. At Zomato, the best analysts do not just show numbers — they answer "so what?" and "what should we do about it?" That skill is what gets analysts into leadership conversations.',
-'Python basics and syntax':'The foundational programming knowledge needed to work with data at scale. Excel has limits; Python does not. At Blinkit, the analytics team uses Python to process millions of daily order records that would crash any spreadsheet.',
-'Pandas for data manipulation':'The core Python library for working with structured data — loading, cleaning, filtering, reshaping. At Zomato, Pandas is used to merge order data from multiple cities, clean inconsistent restaurant name formats, and build the weekly performance report.',
-'NumPy for numerical operations':'Fast numerical calculations on large datasets. Used behind the scenes in almost every data pipeline. At Blinkit, NumPy powers the real-time demand forecast calculations that update stock levels across 500+ dark stores every hour.',
-'Data cleaning and wrangling':'Making messy, inconsistent real-world data usable. At Zomato, raw order data arrives with duplicate entries, missing delivery times, inconsistent city names, and null values. Someone has to clean it before any analysis can happen. That someone is the data analyst.',
-'AI-assisted Python coding':'Using GitHub Copilot, ChatGPT, or Claude to write Python code faster and debug errors more efficiently. The skill is not just running the AI suggestion — it is knowing whether the output is correct. Validators, not prompters.',
-'Product funnel analysis':'Tracking what percentage of users complete each step of a process — and where they drop off. At Zomato, the funnel is: app open → restaurant search → item added to cart → checkout → payment → order placed. A drop at checkout means something specific is broken there.',
-'Cohort and retention analysis':'Grouping users by when they first joined and tracking their behaviour over time. At Blinkit, the team asks: "Of users who placed their first order in January, how many were still ordering by March?" That number tells you whether the product is actually building habits.',
-'User journey mapping':'Understanding the full sequence of actions a user takes — from discovery to repeat purchase. At Zomato, journey mapping revealed that users who add a second restaurant to favourites within their first week have 3x higher six-month retention. That became a product priority.',
-'Prompt engineering for data':'Writing precise instructions to AI tools that generate accurate SQL queries, Python code, or data summaries — not vague prompts that produce generic outputs. The data professional who gets consistently useful AI outputs is the one with this skill.',
-'Gen AI workflows for analytics':'Connecting AI tools into repeatable pipelines — so the weekly report generates itself, the dashboard narratives write themselves, and the team spends time on decisions, not on data pulling. At Blinkit, automated Gen AI briefings save the analytics team eight hours every week.',
-'AI for SQL and Python automation':'Building scripts and workflows where AI generates code, validates it, runs it, and summarises the output — with a human reviewing the result rather than doing the mechanical work. The analyst becomes an orchestrator, not a coder.',
-'Advanced Pandas and data workflows':'Handling complex, large-scale data transformations — merging multiple data sources, computing rolling metrics, building reusable pipelines. At Zomato, advanced Pandas workflows process the full order history across all cities to compute monthly category-level P&Ls.',
-'A/B testing and experimentation':'Running controlled experiments to test whether a change actually improved a metric — or just appeared to. At Blinkit, every app change goes through an A/B test before full rollout. Knowing how to design and interpret these tests correctly is what separates senior analysts from junior ones.',
-'Hypothesis testing and p-values':'The mathematical foundation of deciding whether an experiment result is real or just random noise. A p-value below 0.05 does not mean what most people think it means. This skill means never misreading an experiment result again.',
-'Statistical significance':'Knowing the difference between a real effect and a coincidence in data. At Zomato, a 2% increase in conversion might be significant at scale — or might just be weekly noise. Statistical significance is how you tell the difference and make decisions with confidence.',
-'Experiment design':'Deciding how long to run a test, how many users to include, and how to split them — before the experiment starts. Bad design produces uninterpretable results. Good design means you can act on the outcome with confidence.',
-'Confidence intervals':'Expressing the range within which the true value probably lies, rather than presenting a point estimate as fact. At Blinkit, when the team says "our new checkout flow improves conversion by 4% ± 1.2%," that ± is the confidence interval. It is what makes the recommendation trustworthy.',
-'Advanced product metrics (North Star)':'Identifying the single metric that best predicts long-term business health — and building everything else around it. At Zomato, the North Star is not revenue. It is monthly active restaurants with repeat orders. Every other metric exists to serve that one.',
-'AWS S3 and data pipelines':'Storing and moving data in the cloud at scale. At Blinkit, raw order event data lands in S3 every minute. The data pipeline picks it up, transforms it, and loads it into the warehouse for analysis — automatically, reliably, every day.',
-'Redshift and cloud warehousing':'A cloud database built for large-scale analytics queries. At Zomato, the data warehouse holds years of order history across all cities. Analysts query it directly — no waiting for the data team to pull a number. Redshift makes that possible.',
-'Live dashboards on cloud data':'Connecting a BI tool like Tableau directly to a cloud warehouse so the dashboard always shows current data — not a snapshot from last Tuesday. At Blinkit, the dark store operations dashboard refreshes every 15 minutes automatically.',
-'Interview-grade problem framing':'The ability to break down an ambiguous business question into a structured analytical approach on the spot. "Orders dropped this week — figure out why" is not a data question. It is a problem-framing question. This skill is what gets analysts to final rounds at every product company.',
-'Portfolio of 3 end-to-end analytics projects':'Three working systems built from scratch — food delivery analytics, content platform analytics, and a live cloud pipeline — each demonstrable in interviews. Not exercises. Real systems with real code, on GitHub, with a clear business story behind each one.',
-'Linear algebra for ML':'The mathematics of how machine learning models store and transform information. Matrices, vectors, dot products — these are the language in which every ML model is written. Understanding this means understanding why models behave the way they do, not just which button to press.',
-'Probability and Bayesian reasoning':'Thinking in terms of likelihood and updating beliefs as new evidence arrives. At Zomato, the fraud detection model uses Bayesian reasoning to continuously update the probability that an order is fraudulent as more signals arrive — address mismatch, unusual payment method, suspicious order value.',
-'Machine learning concepts and workflows':'The end-to-end process of building an ML model — from defining the problem and preparing data to training, evaluating, and deploying. Understanding the workflow is what separates analysts who use ML tools correctly from those who misuse them.',
-'Feature engineering':'Transforming raw data into the input signals that make an ML model accurate. At Blinkit, a delivery time prediction model is only as good as its features — distance, time of day, dark store load, weather, day of week. Building the right features is often more important than choosing the right algorithm.',
-'Linear and Logistic Regression':'The foundational ML models. Linear regression predicts a number (delivery time). Logistic regression predicts a probability (will this customer churn?). Every ML interview asks about these. Every ML model is compared against them as a baseline.',
-'Decision Trees and Random Forest':'Models that make predictions by asking a series of if-then questions — the way a human expert might. At Zomato, a Random Forest model predicts restaurant closure risk by combining dozens of signals: order frequency, cancellation rate, review scores, and seasonal patterns.',
-'XGBoost and LightGBM':'The most widely used ML algorithms in industry — winners of hundreds of data science competitions, used in production at every major tech company. At Blinkit, XGBoost powers the demand forecasting model that decides how much stock each dark store needs every morning.',
-'Model evaluation (precision, recall, AUC)':'Understanding not just whether a model is accurate, but what kind of errors it makes — and whether those errors matter for the business. At Zomato, a fraud detection model that is 99% accurate but misses 80% of actual fraud is useless. Precision and recall measure the errors that matter.',
-'K-Means and DBSCAN clustering':'Algorithms that group data points with similar characteristics — without being told the categories in advance. At Zomato, K-Means segments the restaurant base into groups: high-value growing partners, declining partners, new entrants — each needing a different business approach.',
-'Customer segmentation with ML':'Using clustering algorithms to divide customers into meaningful groups and design different strategies for each. At Blinkit, customer segments revealed that 20% of users drive 68% of revenue — and those users have entirely different ordering patterns than the rest of the base.',
-'ARIMA and SARIMA forecasting':'Statistical models for predicting future values based on historical patterns — with seasonal effects accounted for. At Zomato, SARIMA forecasts weekend order volume by city, accounting for weekly patterns, festive season spikes, and long-term growth trends.',
-'Collaborative filtering':'Recommendation algorithms that suggest items based on what similar users liked — the core engine behind "You might also like." At Blinkit, collaborative filtering drives the "Frequently bought together" section that increases average order value by 12%.',
-'Docker for ML':'Packaging an ML model with all its dependencies so it runs identically everywhere — on a laptop, a server, or in the cloud. At Zomato, every deployed model runs in a Docker container. Without this, a model that works on the data scientist\'s machine might fail in production.',
-'Model versioning and MLflow':'Tracking every experiment — which data, which parameters, which results — so the team can reproduce any result and confidently roll back if a new model performs worse. At Blinkit, MLflow tracks 200+ demand forecasting experiments so the best-performing version is always identifiable.',
-'Neural network architecture and backpropagation':'How deep learning models are structured and how they learn — the mathematics of how errors flow backward through a network to update its weights. Understanding this is what allows a data scientist to diagnose why a model is not learning and fix it.',
-'Convolutional Neural Networks (CNNs)':'Neural networks specialised for image data — the technology behind every image recognition system. At Blinkit, a CNN inspects product images uploaded by sellers to detect low-quality photos before they go live in the app.',
-'Computer vision (YOLOv8, EfficientNet)':'Cutting-edge computer vision models that can detect and classify objects in images in real time. At Blinkit\'s warehouses, a YOLOv8 model on conveyor belt cameras detects damaged packages at full belt speed and routes them for rework before they reach customers.',
-'NLP with transformer models':'State-of-the-art text understanding using models like BERT and GPT. At Zomato, transformer-based NLP classifies customer reviews by sentiment, intent, and issue type — processing 5 million reviews per week automatically, enabling the quality team to act on patterns rather than read individual reviews.',
-'BERT fine-tuning for text classification':'Taking a pre-trained language model and adapting it to classify text for your specific business. At Zomato, a fine-tuned BERT model classifies support tickets by urgency and issue type — routing a "wrong order delivered" ticket to the right team within seconds.',
-'AI Engineering and system design':'Building AI systems that work reliably in production — handling model latency, fallback strategies, prompt management, and the infrastructure that keeps AI outputs accurate and auditable. The difference between a data scientist and an AI engineer.',
-'Agentic AI and autonomous workflows':'AI systems that chain together multiple steps to complete a goal without a human clicking at each step. At Zomato, an agentic system could ingest a new restaurant partner application, verify documents, check compliance signals, assess fraud risk, and generate an onboarding decision — entirely automatically.',
-'RAG and knowledge retrieval':'Retrieval-Augmented Generation — giving an AI access to your specific knowledge base so it answers from your actual data, not from general training. At Blinkit, an internal AI assistant built on RAG answers "what is the SOP for a dark store stockout?" with the actual current SOP — not a generic approximation.',
-'Embeddings and vector search':'Representing text or images as numbers that capture meaning — so "quick delivery" and "fast shipping" are recognised as the same thing. The engine behind semantic search, recommendation systems, and RAG. At Zomato, vector search powers the restaurant discovery engine.',
-'Portfolio of 4 end-to-end DS projects':'Four production-grade systems — customer intelligence, quality inspection, support automation, and multi-modal search — each demonstrable in interviews. The depth and breadth of portfolio that senior data science roles at Zomato, Blinkit, and Flipkart expect to see before making an offer.',
-};
-function getDesc(s){
-  if(SD[s]) return SD[s];
-  for(const k of Object.keys(SD)){if(k.toLowerCase().includes(s.toLowerCase().slice(0,12))||s.toLowerCase().includes(k.toLowerCase().slice(0,12))) return SD[k];}
-  return 'A key skill built in this stage — part of the end-to-end workflow that companies like Zomato and Blinkit expect data professionals to own from day one.';
-}
-
-/* ══ PILL INTERACTION ══ */
-let aP=null;
-function handlePill(pill,skill){
-  if(aP===pill){closeEx();return;}
-  if(aP) aP.classList.remove('ap');
-  aP=pill;pill.classList.add('ap');
-  document.getElementById('ex-name').textContent=skill;
-  document.getElementById('ex-text').textContent=getDesc(skill);
-  document.getElementById('ex-box').classList.add('on');
-}
-function closeEx(){
-  if(aP){aP.classList.remove('ap');aP=null;}
-  document.getElementById('ex-box').classList.remove('on');
-}
-
-/* ══ TRACK DATA ══ */
-const tracks={
-  analytics:{
-    max:7,
-    stages:[
-      {name:'Advanced SQL and AI for data professionals',
-       skills:['SQL querying for business decisions','AI-assisted SQL generation','Query validation and debugging','Joins and aggregations','Subqueries and window functions'],
-       newSkills:['SQL querying for business decisions','AI-assisted SQL generation','Query validation and debugging','Joins and aggregations','Subqueries and window functions'],
-       jobs:[{t:'Building foundational data skills — not yet interview-ready',c:'#a8a29e'}],
-       m:'"Can already write SQL to answer business questions — not just queries that run. The combination of SQL fluency and AI-assisted validation is exactly what junior analyst job descriptions ask for now."',
-       n:'SQL is the first filter in every data analyst interview process. Clearing this stage makes the first technical screen passable.'},
-      {name:'Excel, dashboarding and AI storytelling',
-       skills:['SQL querying for business decisions','AI-assisted SQL generation','Joins and aggregations','Subqueries and window functions','Excel for data analysis','Tableau and Power BI basics','AI-generated insight narratives','Dashboard design principles','Data storytelling'],
-       newSkills:['Excel for data analysis','Tableau and Power BI basics','AI-generated insight narratives','Dashboard design principles','Data storytelling'],
-       jobs:[{t:'Data Analyst (entry-level)',c:'#ea580c'},{t:'Reporting Analyst',c:'#ea580c'},{t:'Business Analyst',c:'#a8a29e'}],
-       m:'"Can build a dashboard and explain what it means for the business — not just present charts. The AI insight narrative is the differentiator. Most candidates can make the chart; very few can write the story."',
-       n:'SQL + dashboarding covers the baseline requirement for most junior Data Analyst roles at Indian product companies.'},
-      {name:'Python foundations and AI coding assistants',
-       skills:['SQL querying for business decisions','AI-assisted SQL generation','Joins and aggregations','Dashboard design principles','Data storytelling','Python basics and syntax','Pandas for data manipulation','NumPy for numerical operations','Data cleaning and wrangling','AI-assisted Python coding'],
-       newSkills:['Python basics and syntax','Pandas for data manipulation','NumPy for numerical operations','Data cleaning and wrangling','AI-assisted Python coding'],
-       jobs:[{t:'Data Analyst',c:'#ea580c'},{t:'Junior Data Scientist (analytics-focused)',c:'#ea580c'},{t:'Analytics Engineer',c:'#a8a29e'}],
-       m:'"Can handle messy, real-world datasets in Python with AI assistance — the exact thing that trips up most self-taught analysts in technical rounds. SQL + Pandas + dashboards is a genuinely competitive analyst profile."',
-       n:'Most mid-level Data Analyst job descriptions list SQL, Python, and a BI tool. This stage makes all three checkboxes. Phase 1 core skills complete.'},
-      {name:'Product analytics and Gen AI for analytics',
-       skills:['All SQL and Python skills','All dashboarding and storytelling skills','Product funnel analysis','Cohort and retention analysis','User journey mapping','Prompt engineering for data','Gen AI workflows for analytics','AI for SQL and Python automation'],
-       newSkills:['Product funnel analysis','Cohort and retention analysis','User journey mapping','Prompt engineering for data','Gen AI workflows for analytics','AI for SQL and Python automation'],
-       jobs:[{t:'Product Analyst',c:'#0284c7'},{t:'Data Analyst (mid-level)',c:'#0284c7'},{t:'Customer Analytics Manager',c:'#a8a29e'}],
-       m:'"Can answer the Zomato interview question — orders dropped this week, figure out why — end to end. Funnels, cohorts, retention, root cause, recommendation. That is the real expectation at every data-driven company now."',
-       n:'Phase 1 complete. This is the profile that Product Analyst roles at Swiggy, Blinkit, and Razorpay are looking for. The Gen AI integration is a direct differentiator in every interview.'},
-      {name:'Advanced analytics, statistics and experimentation',
-       skills:['All prior skills','Advanced Pandas and data workflows','A/B testing and experimentation','Hypothesis testing and p-values','Statistical significance','Experiment design','Confidence intervals'],
-       newSkills:['Advanced Pandas and data workflows','A/B testing and experimentation','Hypothesis testing and p-values','Statistical significance','Experiment design','Confidence intervals'],
-       jobs:[{t:'Senior Data Analyst',c:'#0284c7'},{t:'Experimentation Analyst',c:'#0284c7'},{t:'Product Data Analyst',c:'#0284c7'},{t:'Analytics Lead',c:'#a8a29e'}],
-       m:'"Can design an A/B test, run it correctly, and explain whether the results are actually significant or just noise. That is the question every senior analytics interview at Zomato, Blinkit, and Google asks. This stage makes it answerable."',
-       n:'Statistics and A/B testing knowledge moves the learner from junior to mid-senior analyst territory. Phase 2 core material.'},
-      {name:'Advanced product analytics and cloud / AWS',
-       skills:['All prior skills','Advanced product metrics (North Star)','AWS S3 and data pipelines','Redshift and cloud warehousing','Live dashboards on cloud data'],
-       newSkills:['Advanced product metrics (North Star)','AWS S3 and data pipelines','Redshift and cloud warehousing','Live dashboards on cloud data'],
-       jobs:[{t:'Senior Data Analyst',c:'#0284c7'},{t:'Analytics Engineer',c:'#0284c7'},{t:'Business Intelligence Engineer',c:'#0284c7'},{t:'Data Platform Analyst',c:'#a8a29e'}],
-       m:'"Can build the full pipeline — raw event data in S3, cleaned and loaded into Redshift, surfaced in a live Tableau dashboard. That is exactly how Blinkit\'s BI team operates. Phase 2 complete."',
-       n:'Cloud skills are now a significant differentiator for analytics roles. Most analyst candidates cannot demonstrate this. The end-to-end cloud pipeline capstone goes directly onto the portfolio.'},
-      {name:'Interview readiness and programme complete',
-       skills:['All prior skills','Interview-grade problem framing','Portfolio of 3 end-to-end analytics projects'],
-       newSkills:['Interview-grade problem framing','Portfolio of 3 end-to-end analytics projects'],
-       jobs:[{t:'Data Analyst at top product companies',c:'#16a34a'},{t:'Senior Analyst at FAANG and Indian unicorns',c:'#16a34a'},{t:'Business Intelligence Engineer',c:'#16a34a'},{t:'Product Analyst',c:'#a8a29e'}],
-       m:'"Full analytics programme complete. SQL, Python, Dashboarding, Product Analytics, Statistics, Experimentation, Cloud/AWS, Gen AI integration, three portfolio projects, and interview simulation. The profile Zomato, Google, and Blinkit\'s analytics teams are actively hiring for."',
-       n:'Three capstone projects — Food Delivery Analytics, Content Platform Analytics, End-to-End Cloud Pipeline — all on GitHub, all demonstrable in interviews.'}
-    ]
-  },
-  ds:{
-    max:9,
-    stages:[
-      {name:'SQL, Python and AI — dual foundations',
-       skills:['SQL querying for business decisions','AI-assisted SQL generation','Joins and aggregations','Python basics and syntax','Pandas for data manipulation','AI-assisted Python coding'],
-       newSkills:['SQL querying for business decisions','AI-assisted SQL generation','Joins and aggregations','Python basics and syntax','Pandas for data manipulation','AI-assisted Python coding'],
-       jobs:[{t:'Building foundational skills — not yet interview-ready',c:'#a8a29e'}],
-       m:'"Two foundations acquired simultaneously — SQL for querying, Python for processing. Every data science interview assumes both. Starting here means neither will be a weakness in any technical round."',
-       n:'The DS track combines the SQL and Python modules from the start. Nothing about models is taught without first establishing the data layer that feeds them.'},
-      {name:'Product analytics and Gen AI for analytics',
-       skills:['All SQL and Python skills','Product funnel analysis','Cohort and retention analysis','User journey mapping','Prompt engineering for data','Gen AI workflows for analytics'],
-       newSkills:['Product funnel analysis','Cohort and retention analysis','User journey mapping','Prompt engineering for data','Gen AI workflows for analytics'],
-       jobs:[{t:'Data Analyst',c:'#ea580c'},{t:'Junior Data Scientist (analytics-focused)',c:'#a8a29e'}],
-       m:'"Can move from raw data to a business recommendation — the end-to-end pipeline that Zomato expects from every data hire. Product analytics comes early because model building without business context produces models nobody uses."',
-       n:'The Gen AI workflow integration at this stage differentiates DS learners from those who just know tools.'},
-      {name:'Advanced analytics, statistics and experimentation',
-       skills:['All prior skills','Advanced Pandas and data workflows','A/B testing and experimentation','Hypothesis testing and p-values','Statistical significance','Experiment design','Confidence intervals'],
-       newSkills:['Advanced Pandas and data workflows','A/B testing and experimentation','Hypothesis testing and p-values','Statistical significance','Experiment design','Confidence intervals'],
-       jobs:[{t:'Data Analyst',c:'#ea580c'},{t:'Junior Data Scientist',c:'#ea580c'},{t:'Experimentation Analyst',c:'#a8a29e'}],
-       m:'"Can design, run, and interpret an experiment correctly — the skill that separates data scientists whose results are trusted from those whose results are questioned. Statistics and A/B testing appear in almost every DS interview at Zomato and Blinkit."',
-       n:'Phase 2 core foundations complete. The learner can now handle the analytics and experimentation portion of any DS job description.'},
-      {name:'Mathematical foundations and ML concepts',
-       skills:['All prior skills','Linear algebra for ML','Probability and Bayesian reasoning','Machine learning concepts and workflows','Feature engineering','AI-powered ML workflows'],
-       newSkills:['Linear algebra for ML','Probability and Bayesian reasoning','Machine learning concepts and workflows','Feature engineering','AI-powered ML workflows'],
-       jobs:[{t:'Junior Data Scientist',c:'#4338ca'},{t:'ML Engineer (junior)',c:'#a8a29e'}],
-       m:'"Understands why models work — not just how to call them. Can explain gradient descent to a hiring panel without reading off a textbook definition. This is what most online learners skip, and what interview panels use to separate candidates who truly know ML from those who have just run code."',
-       n:'Most self-taught data science candidates skip the maths. This stage closes that gap permanently.'},
-      {name:'Supervised machine learning with AI',
-       skills:['All prior skills','Linear and Logistic Regression','Decision Trees and Random Forest','XGBoost and LightGBM','Model evaluation (precision, recall, AUC)','End-to-end supervised ML pipelines'],
-       newSkills:['Linear and Logistic Regression','Decision Trees and Random Forest','XGBoost and LightGBM','Model evaluation (precision, recall, AUC)','End-to-end supervised ML pipelines'],
-       jobs:[{t:'Data Scientist',c:'#4338ca'},{t:'ML Engineer (junior)',c:'#4338ca'},{t:'Applied Scientist (junior)',c:'#a8a29e'}],
-       m:'"Can build a demand forecasting model for Blinkit\'s dark store replenishment — selecting the right algorithm, evaluating it on business impact rather than just accuracy, and explaining the output to a non-technical PM. The most common interview topic for DS roles."',
-       n:'Supervised ML is the core of most DS job descriptions. Clearing this stage opens the majority of the data science hiring market.'},
-      {name:'Unsupervised machine learning and customer segmentation',
-       skills:['All prior skills','K-Means and DBSCAN clustering','Customer segmentation with ML'],
-       newSkills:['K-Means and DBSCAN clustering','Customer segmentation with ML'],
-       jobs:[{t:'Data Scientist',c:'#4338ca'},{t:'Customer Analytics Scientist',c:'#4338ca'},{t:'Product Data Scientist',c:'#a8a29e'}],
-       m:'"Can segment Zomato\'s customer base by ordering behaviour — finding tribal patterns that no survey would capture — and recommend different product strategies per segment. The Smart Retail capstone is built at this stage."',
-       n:'Phase 3 core ML complete. The Customer Intelligence capstone project goes onto the portfolio here.'},
-      {name:'Time series, recommender systems and MLOps',
-       skills:['All prior skills','ARIMA and SARIMA forecasting','Collaborative filtering','Docker for ML','Model versioning and MLflow'],
-       newSkills:['ARIMA and SARIMA forecasting','Collaborative filtering','Docker for ML','Model versioning and MLflow'],
-       jobs:[{t:'Data Scientist (mid-level)',c:'#4338ca'},{t:'ML Engineer',c:'#4338ca'},{t:'Applied Scientist',c:'#4338ca'},{t:'Recommender Systems Engineer',c:'#a8a29e'}],
-       m:'"Can build the demand forecasting system that powers Blinkit\'s dark store replenishment AND keep it running in production, versioned, monitored, and auto-retraining. The difference between a data scientist who builds models and one who ships products."',
-       n:'MLOps is the gap most DS candidates cannot demonstrate. This stage closes it permanently with working capstone evidence.'},
-      {name:'Deep learning, CV and NLP',
-       skills:['All prior skills','Neural network architecture and backpropagation','Convolutional Neural Networks (CNNs)','Computer vision (YOLOv8, EfficientNet)','NLP with transformer models','BERT fine-tuning for text classification'],
-       newSkills:['Neural network architecture and backpropagation','Convolutional Neural Networks (CNNs)','Computer vision (YOLOv8, EfficientNet)','NLP with transformer models','BERT fine-tuning for text classification'],
-       jobs:[{t:'Senior Data Scientist',c:'#7c3aed'},{t:'ML Engineer (mid-senior)',c:'#7c3aed'},{t:'Research Scientist',c:'#a8a29e'}],
-       m:'"Can build the image recognition model Blinkit uses for product quality inspection in its warehouses — and the NLP classifier Zomato uses to auto-route support tickets. Every senior DS role now assumes deep learning. This stage makes that assumption correct."',
-       n:'Computer vision and NLP portfolio pieces go on GitHub at this stage. Two of the three rarest DS skills — demonstrated.'},
-      {name:'AI engineering, Agentic AI and programme complete',
-       skills:['All prior skills','AI Engineering and system design','Agentic AI and autonomous workflows','RAG and knowledge retrieval','Embeddings and vector search','Portfolio of 4 end-to-end DS projects'],
-       newSkills:['AI Engineering and system design','Agentic AI and autonomous workflows','RAG and knowledge retrieval','Embeddings and vector search','Portfolio of 4 end-to-end DS projects'],
-       jobs:[{t:'Senior Data Scientist',c:'#16a34a'},{t:'AI Engineer / Applied Scientist',c:'#16a34a'},{t:'ML Researcher',c:'#16a34a'},{t:'Data Science Lead',c:'#16a34a'}],
-       m:'"Full programme complete. SQL, Python, Product Analytics, Statistics, Mathematical Foundations, Supervised + Unsupervised ML, MLOps, Deep Learning, CV, NLP, Agentic AI. Four portfolio projects. Interview simulation. The profile Zomato\'s Applied Science and AI teams are actively hiring for."',
-       n:'Four capstone projects: Customer Intelligence, Food Quality Inspection, Support Automation, Multi-Modal Search Engine. MLOps, Agentic AI, and full production deployment all demonstrated.'}
-    ]
-  }
-};
-
-let currentTrack='analytics';
-function setTrack(t,btn){
-  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  currentTrack=t;
-  const max=tracks[t].max;
-  const sl=document.getElementById('stage-slider');
-  sl.max=max;sl.value=1;
-  updateTracker(1);
-}
-function updateTracker(v){
-  closeEx();
-  const tr=tracks[currentTrack];
-  const c=tr.stages[v-1];
-  const max=tr.max;
-  document.getElementById('stage-label').textContent='Stage '+v+' of '+max;
-  document.getElementById('prog-fill').style.width=Math.round((v/max)*100)+'%';
-  document.getElementById('tc-name').textContent=c.name;
-  const sl=document.getElementById('skill-list');sl.innerHTML='';
-  c.skills.forEach(s=>{
-    const isNew=c.newSkills.includes(s);
-    const li=document.createElement('li');
-    li.className='sp'+(isNew?' new':'');li.textContent=s;
-    li.onclick=function(){handlePill(li,s);};
-    sl.appendChild(li);
-  });
-  const jl=document.getElementById('job-list');jl.innerHTML='';
-  c.jobs.forEach(j=>{
-    const li=document.createElement('li');li.className='job-item';
-    li.innerHTML='<span class="jdot" style="background:'+j.c+'"></span><span>'+j.t+'</span>';
-    jl.appendChild(li);
-  });
-  document.getElementById('m-text').textContent=c.m;
-  document.getElementById('m-note').textContent=c.n;
-}
-
-/* ══ MODULES ══ */
-const phLabel={p1:'Phase 1',p2:'Phase 2',p3:'Phase 3',genai:'Phase 1',mlops:'Phase 3'};
-const phBadge={p1:'b-orange',p2:'b-sky',p3:'b-indigo',genai:'b-orange',mlops:'b-indigo'};
-const trackPillCls={all:'tp-all',analytics:'tp-analytics',ds:'tp-ds',elective:'tp-elective'};
-const trackPillLabel={all:'Both tracks',analytics:'Analytics track',ds:'DS track',elective:'Elective'};
+const profiles=[
+  {icon:'🌱',bg:'#fff7ed',name:'Complete Beginner',role:'Zero coding or data background',
+   gap:'Has no SQL, Python, or statistics knowledge and does not know where to start. Every online resource moves too fast or teaches tools without connecting them to real problems.',
+   gain:'Built for this exact starting point. AI assists at every step — writing code, explaining errors, suggesting approaches. Zomato and Blinkit examples throughout make every concept feel real. By Phase 1 end: SQL-fluent, Python-capable, building AI-powered dashboards.',
+   from:'Zero data background',to:'Data Analyst at a product company (12–18 months)',
+   mods:['SQL and AI','Python Foundations','Product Analytics','Dashboarding','Gen AI for Analytics']},
+  {icon:'📊',bg:'#fff7ed',name:'Non-tech Professional',role:'Finance, marketing, ops — wants data skills',
+   gap:'Can think analytically but cannot execute. Relies on the data team for every number. Knows this is a career ceiling.',
+   gain:'Phases 1 and 2 give complete independence — pull, analyse, visualise, and present data without asking anyone. Gen AI integration means 10x productivity.',
+   from:'Operations / Finance / Marketing professional',to:'Data Analyst / Product Analyst',
+   mods:['SQL and AI','Dashboarding','Product Analytics','Gen AI for Analytics','Statistics']},
+  {icon:'🔄',bg:'#dcfce7',name:'Career Switcher',role:'Different field — targeting data roles',
+   gap:'Professional experience but no technical credentials. CVs get screened out automatically without a portfolio.',
+   gain:'Portfolio-first approach. Three to four end-to-end capstone projects on Zomato-style problems — demonstrable in interviews, on GitHub — replace missing prior experience.',
+   from:'Professional in an unrelated field',to:'Data Analyst or Junior Data Scientist',
+   mods:['Full programme','Capstone Projects','Interview Readiness','Product Analytics']},
+  {icon:'⬆',bg:'#e0e7ff',name:'Existing Data Analyst',role:'Has SQL and Excel — wants to level up',
+   gap:'Can do the current job but sees no path upward. Missing statistics, ML, and AI workflow skills. Every senior role now requires at least one of these.',
+   gain:'Phases 2 and 3 are the targeted upgrade. Statistics closes the A/B testing gap. ML adds the DS capability. Gen AI and Agentic AI put the learner at the frontier.',
+   from:'Data Analyst (2–4 years)',to:'Senior Analyst / Junior Data Scientist / AI Analyst',
+   mods:['Statistics','Supervised ML','Advanced Product Analytics','MLOps','Agentic AI']},
+  {icon:'🤖',bg:'#f5f3ff',name:'Developer / Engineer',role:'Can code — moving into data science',
+   gap:'Technically strong but missing data-specific thinking. Never done feature engineering, A/B tests, or model deployment.',
+   gain:'Statistics, ML, and MLOps add the data science layer on top of the existing engineering foundation. MLOps and Agentic AI are where engineering background becomes a real advantage.',
+   from:'Software / Backend Engineer',to:'ML Engineer / Data Scientist / AI Engineer',
+   mods:['Statistics','ML with AI','MLOps Deployment','Deep Learning','AI Engineering']}
+];
 
 const modules=[
-/* ──── PHASE 1 ──── */
-{ph:'p1',track:'all',num:'01',name:'Advanced SQL & AI for Data Professionals',isElective:false,duration:'2 months',
- tools:'SQL, BigQuery, Zomato order data, AI query tools, ChatGPT, Gemini',
- biz:'🍕 <strong>Zomato scenario:</strong> The business team needs to know which cities had the highest cancellation rates last week — broken down by restaurant type, time slot, and whether the customer was prime or not. That question touches 4 different database tables. This module teaches how to write that query — and how to use AI to write it 3x faster and validate it before running.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Data Scientist',cls:'rp-ds'}],
- roleDetail:'Analysts use SQL daily to pull reports. Data scientists use it to extract training data for models.',
- hook:'"SQL is the first question in every data interview. If a candidate cannot write a join and aggregate confidently, the call ends in round one. This module makes SQL a strength, not a gap."'},
+  {id:'m01',num:'01',phase:'Phase 1',phTag:'tag-p1',isElective:false,isNew:false,track:'Both tracks',dur:'2 months',
+   name:'Advanced SQL & AI for Data Professionals',
+   tools:'SQL, BigQuery, AI query tools, ChatGPT, Gemini',
+   story:'Imagine Zomato\'s head of growth walks in on a Monday morning and says: "Our order cancellations went up 18% last week — I need to know which cities, which time slots, and whether it was mostly new users or repeat customers." That question sounds simple. But answering it means going into a database with millions of rows, connecting four different tables — orders, users, restaurants, and delivery zones — and writing precise instructions to pull exactly the right numbers. That is what SQL is. It is the language people use to ask questions of a database. This module teaches learners to do exactly that — and to use AI tools to do it three times faster than before, with fewer mistakes.',
+   analogy:'Think of a database like a giant warehouse with thousands of filing cabinets. SQL is the person who knows exactly which cabinet, which drawer, and which folder to open — and can combine information from ten different cabinets in seconds. Without SQL, you are standing in that warehouse with no map, waiting for someone else to find things for you.',
+   outcomes:['Write complex queries answering real business questions on multi-table databases','Use AI tools to generate, check, and fix queries significantly faster','Understand joins, aggregations, subqueries, and window functions — the things every interview tests','Pull data independently without relying on a data engineering team'],
+   jobs:['Data Analyst (entry-level)','Business Analyst','Reporting Analyst'],
+   script:'"Think about any time at work when you needed a specific number — how many customers, which product sold the most, when did something change. Right now you would have to ask someone else to get it. After this module, you go directly to the data yourself. You type what you want to know and the database tells you. And with AI tools, even the writing part becomes faster — you describe what you are looking for in plain English and AI helps you build the query. It is like going from having to ask a librarian for every book, to walking straight to the right shelf yourself."'},
 
-{ph:'p1',track:'all',num:'02',name:'Excel & Dashboarding with AI Storytelling',isElective:false,duration:'1 month',
- tools:'Excel, Tableau, Power BI, AI insight tools, Zomato category data',
- biz:'📊 <strong>Blinkit scenario:</strong> The category manager wants a dashboard that shows product sell-through rates across all 500 dark stores — updated every Monday morning, with an automatically written summary explaining what changed and what to do about it. This module builds exactly that — including the AI layer that writes the insight narrative without human intervention.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Business Analyst',cls:'rp-analyst'}],
- roleDetail:'Every business-facing analyst presents data through dashboards. The AI narrative layer is what makes them stand out.',
- hook:'"Earlier you made dashboards. Now you explain decisions using dashboards. The AI insight narrative is the differentiator — most candidates can build the chart; very few can write the story that makes the chart actionable."'},
+  {id:'m02',num:'02',phase:'Phase 1',phTag:'tag-p1',isElective:false,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Excel & Dashboarding with AI Storytelling',
+   tools:'Excel, Tableau, Power BI, AI insight generation tools',
+   story:'Every Monday morning at Blinkit, the category manager reviews a dashboard showing how each product category performed over the last week. Which categories grew? Which had stockouts? Which dark stores are underperforming? That dashboard does not build itself. Someone built it, connected it to live data, and made sure the right numbers are visible. But here is the part most people miss: a good dashboard also tells you what to do. It does not just show that milk sales dropped 12% in Koramangala — it highlights that in a way that says "this needs attention now." The combination of visual design and written narrative is what this module builds.',
+   analogy:'A dashboard without a story is like a weather app that shows 38°C but does not say "carry water and avoid going out between noon and 4pm." The data is there but the useful part — the recommendation — is missing. AI storytelling adds the "so what" and the "what to do next" automatically.',
+   outcomes:['Build interactive dashboards in Tableau and Power BI that teams can use independently','Use Excel for serious analysis — pivot tables, lookups, structured models','Generate AI-written narratives that explain what changed and why','Design dashboards so the most important signal is impossible to miss'],
+   jobs:['Data Analyst','Reporting Analyst','Business Analyst'],
+   script:'"Most people in business already use Excel and some kind of dashboard. The problem is the data is there but the answer is not. Someone still has to look at the charts, understand them, and write an email explaining it. This module trains learners to build dashboards where the AI writes that email automatically — the chart updates, the insight updates with it, and the team gets a summary every Monday at 8am without anyone spending time on it. That skill is now explicitly on analyst job descriptions. It was not two years ago."'},
 
-{ph:'p1',track:'all',num:'03',name:'Python Foundations + AI Coding Assistants',isElective:false,duration:'1 month',
- tools:'Python, Pandas, NumPy, Jupyter, GitHub Copilot, Cursor, ChatGPT',
- biz:'🐍 <strong>Zomato scenario:</strong> The raw restaurant performance data arrives every week as a messy CSV — inconsistent city names, duplicate restaurant IDs, missing delivery times. Before anyone can analyse it, someone has to clean it. This module teaches exactly how — using Python and AI to do it in 30 minutes instead of 4 hours.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Data Scientist',cls:'rp-ds'}],
- roleDetail:'Analysts use Python to clean and prepare data. Data scientists use it to build entire pipelines. Both start here.',
- hook:'"Real data is always messy. This module teaches how to handle it with Python and AI assistance — the way it actually arrives in a company\'s data pipeline, not how it looks in tutorials."'},
+  {id:'m03',num:'03',phase:'Phase 1',phTag:'tag-p1',isElective:false,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Python Foundations + AI Coding Assistants',
+   tools:'Python, Pandas, NumPy, Jupyter, GitHub Copilot, Cursor, ChatGPT',
+   story:'Zomato\'s restaurant quality team gets a data export every week — a file with 400,000 rows covering every restaurant\'s orders, cancellation rate, average rating, and delivery time. The problem is it arrives messy. Some restaurant names are spelled differently across rows. Some delivery time entries are blank. Some rows are duplicates. In Excel, cleaning this would take four to six hours and would still miss things. In Python, a well-written script does it in eight minutes and catches every inconsistency automatically. This module teaches learners to write that script — with AI tools handling the parts they are unsure about.',
+   analogy:'Excel is like cooking for four people in a home kitchen. Python is like running a restaurant kitchen serving 500 covers a night. The tools, the speed, and the scale are completely different. And with AI assistants like GitHub Copilot, it is like having a sous chef who knows every recipe — you describe what you want done and they handle the execution while you focus on what matters.',
+   outcomes:['Write Python scripts to clean, reshape, and analyse real messy datasets','Use Pandas for all major data manipulation — the same library used in every analytics team','Use NumPy for fast numerical computation on large data','Work with AI coding assistants to write and debug code significantly faster'],
+   jobs:['Data Analyst','Analytics Engineer','Junior Data Scientist'],
+   script:'"The honest truth about data work is that 60% of the time is spent cleaning data before any analysis even starts. Excel cannot handle that at scale, and it cannot be automated. Python does both. And with tools like GitHub Copilot, learners do not need to memorise syntax — they describe what they want, the AI writes the code, and they learn by validating and editing it. SQL plus Python plus a BI tool — the three boxes on almost every analyst JD — are all ticked by the end of this module."'},
 
-{ph:'p1',track:'all',num:'04',name:'Data to Decisions: Product Analytics with AI',isElective:false,duration:'1 month',
- tools:'Python, SQL, product analytics frameworks, funnel and cohort tools',
- biz:'📉 <strong>Zomato scenario:</strong> Orders dropped 14% on Saturday night in Bengaluru. The product team needs to know why — and needs an answer by Monday morning. Was it an app issue? A restaurant supply problem? A competitor promotion? This module teaches how to diagnose that question end to end — from raw data to a clear recommendation the product team can act on.',
- roles:[{label:'Product Analyst',cls:'rp-analyst'},{label:'Data Analyst',cls:'rp-analyst'}],
- roleDetail:'Product analysts own the funnel and retention numbers. This module is the core of what that job actually is.',
- hook:'"This is the question every product company asks in interviews. Orders dropped — figure out why. This module teaches how to answer it end to end."'},
+  {id:'m04',num:'04',phase:'Phase 1',phTag:'tag-p1',isElective:false,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Data to Decisions: Product Analytics with AI',
+   tools:'Python, SQL, product analytics frameworks, funnel and cohort tools',
+   story:'It is Tuesday morning at Zomato. Someone from the product team messages: "Conversion dropped 14% on Saturday night in Bengaluru. Leadership is asking questions. Can you look into this?" That is it — no more context. An analyst without product analytics skills will spend the day pulling random numbers and send a reply that raises more questions than it answers. An analyst who has completed this module will immediately know the framework: start at the top of the funnel — how many people opened the app? Then move step by step — restaurant search, item selection, cart, checkout, payment. Find exactly where users dropped off. Then segment by device, user type, area. Form a hypothesis. Write a recommendation. All of that, in one clear document, by end of day.',
+   analogy:'It is like being a detective. You do not know what happened yet, but you have a method — you start at the beginning, follow the clues step by step, and eliminate possibilities until the answer is clear. Product analytics is the detective framework for business data problems.',
+   outcomes:['Break down any metric drop into a structured diagnostic process','Build funnel analyses, cohort analyses, and user journey maps on real data','Use AI to speed up analysis and draft the final recommendation','Answer the most common data interview question — "conversion dropped, diagnose it" — end to end'],
+   jobs:['Product Analyst','Data Analyst (mid-level)','Customer Analytics Manager'],
+   script:'"The question every data company asks in interviews — and on the job every single week — is: something in our product changed, why, and what do we do about it? Most people freeze because they do not have a structured way to approach it. This module gives learners a step-by-step diagnostic method that works for any product problem. After this module, the question that trips up most candidates becomes the question they look forward to answering."'},
 
-{ph:'genai',track:'all',num:'05',name:'Generative AI for Data Analytics & Automation',isElective:false,duration:'1 month',
- tools:'ChatGPT, Claude, Gemini, prompt engineering, n8n, AI workflow automation',
- biz:'🤖 <strong>Blinkit scenario:</strong> Every Monday, the category team needs a briefing: which SKUs are at risk of stockout, which dark stores are underperforming, and what the top 3 actions are for the week. This module builds an automated AI pipeline that generates that briefing — pulling data, writing the SQL, computing the metrics, and drafting the summary — without a human doing the mechanical work.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Analytics Eng.',cls:'rp-ds'}],
- roleDetail:'Any data professional who can automate their own reports is 10x more valuable than one who produces them manually.',
- hook:'"This is the biggest differentiator in the new curriculum. AI is not a module — it is a workflow embedded into every step of the analysis. This is how data professionals who stay relevant actually work."',
- isNew:true},
+  {id:'m05',num:'05',phase:'Phase 1',phTag:'tag-p1',isElective:false,isNew:true,track:'Both tracks',dur:'1 month',
+   name:'Generative AI for Data Analytics & Automation',
+   tools:'ChatGPT, Claude, Gemini, prompt engineering, n8n, AI workflow tools',
+   story:'Every Monday at Blinkit, the category team needs a briefing: which SKUs are at stockout risk, which dark stores are underperforming, and what the three most important actions are for the week. Right now an analyst spends five to seven hours pulling data, running numbers, and writing the summary. This module teaches how to build a system that does all of that automatically — AI generates the SQL queries, pulls the data, computes the metrics, writes the narrative summary, and sends the briefing to the team\'s inbox every Monday at 8am. The analyst now reviews and approves it in 15 minutes instead of spending a full working day on it.',
+   analogy:'Think of it like the difference between manually washing every dish after a restaurant shift versus having a dishwasher. The dishwasher does not replace the chef — the chef still decides what to cook and checks the quality. But it frees them to do the work only a chef can do. Gen AI is the dishwasher for data work. The analyst becomes an orchestrator, not a manual worker.',
+   outcomes:['Build automated analytics pipelines where AI handles the mechanical steps','Write prompts that generate accurate SQL, Python code, and insight narratives consistently','Connect AI tools into workflows using n8n and similar automation platforms','Demonstrate the workflow that 2025 data professionals actually use in production'],
+   jobs:['Data Analyst','Analytics Engineer','AI-augmented Analyst roles'],
+   script:'"This is the module that most clearly separates Scaler 3.0 from every other data programme in the market. Other courses teach SQL and Python. This one teaches how to build systems where AI does the repetitive data work automatically — so the analyst stops being the person who pulls the data and starts being the person who owns the insight. Companies are actively hiring for this skill right now. Most candidates simply do not have it yet."'},
 
-{ph:'p1',track:'all',num:'06',name:'Interview Readiness',isElective:true,duration:'1 month',
- tools:'Mock interviews, case frameworks, resume review, portfolio finalisation',
- biz:'🎯 <strong>Real scenario:</strong> A Swiggy interview starts with "Our checkout conversion dropped this week — walk me through how you would diagnose it." Most candidates freeze. This elective teaches the exact problem-framing method that cracks that question — plus resume review, mock sessions, and portfolio presentation coaching.',
- roles:[{label:'Any data role',cls:'rp-both'}],
- roleDetail:'Recommended for anyone applying within 3 months of programme completion. Directly improves placement outcomes.',
- hook:'"Technical skills get you to the interview. Interview readiness gets you the offer. This elective is for anyone serious about landing a role at a top product company."'},
+  {id:'m06',num:'06',phase:'Phase 1',phTag:'tag-p1',isElective:true,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Interview Readiness',
+   tools:'Mock interviews, case frameworks, resume review, portfolio coaching, negotiation prep',
+   story:'A Zomato interview goes smoothly until the interviewer says: "Our checkout conversion dropped last week. Walk me through how you would diagnose it." The candidate knows the answer conceptually — they have studied funnels. But under interview pressure, they start from the wrong place, miss a key step, and the answer falls apart. This elective is designed to fix the gap between knowing something and being able to perform it under pressure — through repeated mock interviews, structured case practice, and deliberate feedback.',
+   analogy:'You can know every rule of cricket, understand every shot, and have watched hundreds of matches. But the first time you stand at the crease in a real game, it feels completely different. Interview readiness is the practice match before the real one. Technical skills get you to the interview. This gets you the offer.',
+   outcomes:['Use a reliable problem-framing framework for any open-ended case question under pressure','Present portfolio projects in a structured, compelling way interviewers remember','Handle compensation and negotiation conversations confidently','Know exactly which modules and projects to lead with for each type of role'],
+   jobs:['Directly improves placement outcomes across all data roles'],
+   script:'"Technical skills get a learner to the interview. Interview readiness gets them the offer. What we consistently see is that learners who are technically strong but have not practised the interview format lose rounds they should be winning. This elective is the bridge between knowing the material and landing the role — and for anyone planning to apply within three months of completing the programme, it is one of the highest-ROI investments they can make."'},
 
-/* ──── PHASE 2 ──── */
-{ph:'p2',track:'all',num:'07',name:'Advanced Analytics with Python, Pandas & AI Workflows',isElective:false,duration:'1 month',
- tools:'Advanced Pandas, Python, AI automation, data pipeline tools',
- biz:'⚙️ <strong>Blinkit scenario:</strong> The ops team needs a weekly seller health score for every vendor — computed from order fill rate, cancellation rate, delivery time, and return rate — with automatic flags for vendors at churn risk. This module builds that pipeline end to end: ingest raw data, clean it with AI-assisted Pandas, compute the scores, and output the ranked report.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Analytics Eng.',cls:'rp-ds'}],
- roleDetail:'Mid-senior analyst roles require the ability to build complete pipelines independently, not just run individual queries.',
- hook:'"The difference between an analyst who can clean a dataset and one who can build a complete analysis pipeline independently. Every mid-senior analyst role requires this."'},
+  {id:'m07',num:'07',phase:'Phase 2',phTag:'tag-p2',isElective:false,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Advanced Analytics with Python, Pandas & AI Workflows',
+   tools:'Advanced Pandas, Python, AI automation, data pipeline tools',
+   story:'At Blinkit, the operations team needs a weekly seller health score for every vendor — a single number combining how reliably they deliver, how often orders get cancelled, and how their return rate is trending. They need it every Monday, for 3,000 vendors, automatically. A junior analyst might compute one vendor\'s score by hand. A mid-senior analyst builds a pipeline that computes all 3,000 automatically — pulling raw data, cleaning it, running the calculations, flagging churn-risk vendors, and outputting a clean report — without touching it week after week once it is built. That is the skill this module builds.',
+   analogy:'The difference between a carpenter who builds one chair at a time and a furniture factory producing a hundred chairs a day using the same process, reliably, every time. This module turns learners from one-at-a-time analysts into pipeline builders who create systems that run without them.',
+   outcomes:['Build complete, reusable analysis pipelines from raw data to final output','Handle complex multi-source data merges at scale','Automate recurring analytical tasks with AI-assisted Python workflows','Own a full pipeline independently without needing the data engineering team'],
+   jobs:['Senior Data Analyst','Analytics Engineer','Mid-senior Data Analyst'],
+   script:'"The move from junior to mid-senior analyst is not about knowing more tools — it is about being able to build and own a complete pipeline independently. Junior analysts answer individual questions. Mid-senior analysts build systems that answer questions automatically every week. This module is that upgrade. It is also the difference between putting Pandas on a resume and putting built automated analytics pipeline for weekly reporting — and those are two very different CVs in front of an interviewer."'},
 
-{ph:'p2',track:'all',num:'08',name:'Statistics, Experimentation & AI for Data-Driven Decisions',isElective:false,duration:'1 month',
- tools:'Python (scipy, statsmodels), A/B testing frameworks, experiment design',
- biz:'🧪 <strong>Zomato scenario:</strong> The product team wants to test a new one-click reorder button. They run it on 50,000 users for two weeks and see a 3.2% lift in repeat orders. Is that real — or could it just be random variation? This module teaches how to design the test correctly, run the statistics, and write the recommendation that the product team will actually act on.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Data Scientist',cls:'rp-ds'}],
- roleDetail:'Every senior analyst and data scientist needs to own A/B tests. This module makes that possible without second-guessing every result.',
- hook:'"Can you design an A/B test and explain whether the results are actually significant? This is what every senior analytics and product interview asks. This module makes it answerable."'},
+  {id:'m08',num:'08',phase:'Phase 2',phTag:'tag-p2',isElective:false,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Statistics, Experimentation & AI for Data-Driven Decisions',
+   tools:'Python (scipy, statsmodels), A/B testing frameworks, experiment design tools',
+   story:'Zomato\'s product team runs an experiment: they change the position of the reorder button in the app and measure whether it increases repeat orders. After two weeks, the new version shows a 3.1% improvement. The PM is excited and wants to roll it out immediately. But wait — is that 3.1% real, or could it just be random variation? What if they ran the experiment for another week and it disappeared? What if the sample was too small to draw any conclusion? This module teaches learners to answer those questions precisely — to design experiments correctly before they start, run them properly, and interpret the results in a way the product team can trust and act on.',
+   analogy:'Imagine flipping a coin ten times and getting seven heads. Does that mean the coin is biased? Maybe. Or maybe you just got lucky. Statistics gives you the tools to tell the difference between a real pattern and a coincidence — at any scale, on any data. A/B testing is that same idea applied to every product decision a company makes.',
+   outcomes:['Design A/B tests correctly — sample size, split, duration — before they start','Calculate statistical significance and explain what it actually means in plain English','Interpret experiment results honestly, including when the data is inconclusive','Write the product recommendation that clearly states what to do and why the data supports it'],
+   jobs:['Senior Data Analyst','Experimentation Analyst','Product Data Analyst','Analytics Lead'],
+   script:'"The A/B testing question — design an experiment to test X, what do you need to know before you start — comes up in almost every senior analyst and data scientist interview. Most candidates say run it on 50% of users for two weeks. That answer fails. This module teaches the real answer: how to calculate the right sample size, why duration matters, how to check that the groups are actually comparable, and how to communicate the result even when it is ambiguous. That understanding moves a learner from junior to senior territory in the eyes of every interviewer."'},
 
-{ph:'p2',track:'analytics',num:'09A',name:'Advanced Product Analytics',isElective:true,duration:'1 month',
- tools:'Product analytics frameworks, North Star metrics, cohort tools, retention modelling',
- biz:'📈 <strong>Zomato scenario:</strong> The growth team is arguing about whether to focus on acquisition or retention. This elective teaches how to define the North Star metric — the one number that best predicts long-term health — and use it to resolve exactly that debate with data, not opinion. At Zomato, that metric is "monthly active restaurants with repeat orders," not revenue.',
- roles:[{label:'Product Analyst',cls:'rp-analyst'},{label:'Growth Analyst',cls:'rp-analyst'}],
- roleDetail:'Elective for analysts targeting product or growth analytics roles where strategic metric ownership is expected.',
- hook:'"North Star metrics and advanced product frameworks are what separate analysts from analytics leads. This elective gives the language and tools to have that conversation at the senior level."'},
+  {id:'m09a',num:'09A',phase:'Phase 2',phTag:'tag-p2',isElective:true,isNew:false,track:'Analytics track',dur:'1 month',
+   name:'Advanced Product Analytics',
+   tools:'Product analytics frameworks, North Star metrics, cohort tools, retention modelling',
+   story:'Zomato\'s growth team is in a debate: should they focus on acquiring new users or retaining existing ones? Both sides have data. Both sides have charts. Neither side agrees. A senior product analyst cuts through everything with one question: "What is the single metric that most directly predicts whether Zomato is actually growing in a healthy way six months from now?" That question — and the method for answering it — is what this elective teaches. The answer is not revenue. It is not total orders. It is monthly active restaurants with repeat order customers — because when that number grows, everything else follows. That is a North Star metric, and defining it is a senior analytical skill.',
+   analogy:'Most companies try to optimise dozens of metrics at once, which is like trying to steer a car by watching every single dashboard light simultaneously. A North Star metric is the one gauge that actually tells you whether you are headed in the right direction. Everything else is detail that helps you understand why.',
+   outcomes:['Define and defend a North Star metric for any product or business','Build advanced retention models that distinguish healthy growth from vanity growth','Connect analytics decisions directly to revenue and business strategy','Have strategic metric conversations at leadership level — not just execution-level data work'],
+   jobs:['Product Analyst (senior)','Analytics Lead','Growth Analyst','Head of Analytics'],
+   script:'"This elective is for learners who want to move beyond being the analyst who answers questions, into being the analyst who defines what questions the business should be asking. North Star frameworks, retention modelling, strategic metric design — these are the conversations that happen at the VP level. Learners who complete this elective can walk into a Product Analytics Lead interview and demonstrate exactly the kind of strategic thinking those roles are hiring for."'},
 
-{ph:'p2',track:'all',num:'09B',name:'Domain Analytics',isElective:false,duration:'1 month',
- tools:'Industry-specific analytics frameworks, domain data sets, business context modules',
- biz:'🏬 <strong>Real scenarios:</strong> Fintech (fraud detection patterns), e-commerce (supply chain analytics), healthtech (patient journey analysis), edtech (engagement and dropout prediction). Domain analytics teaches how to apply data skills in specific business verticals — because a Blinkit supply chain question looks very different from a Razorpay payments question.',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Domain Specialist',cls:'rp-analyst'}],
- roleDetail:'Learners can specialise in a domain relevant to their target industry — making their profile more specific and hireable.',
- hook:'"Any company can hire a generic analyst. They pay a premium for analysts who understand how their business actually works. Domain analytics closes that gap before the interview."'},
+  {id:'m09b',num:'09B',phase:'Phase 2',phTag:'tag-p2',isElective:false,isNew:false,track:'Both tracks',dur:'1 month',
+   name:'Domain Analytics',
+   tools:'Industry-specific analytics frameworks, domain datasets, business context modules',
+   story:'Two analysts apply for the same role at Razorpay. Both have the same SQL and Python skills. In the interview, the first gives a generic answer about cohort retention. The second says: "In payments, the metric I would watch most closely is transaction success rate by payment method — because a 0.5% drop in UPI success rate at Razorpay\'s scale means thousands of failed transactions per hour and direct revenue loss." Same technical skill, completely different business fluency. The second candidate gets the offer. Domain Analytics builds that business fluency across fintech, e-commerce, healthtech, and edtech.',
+   analogy:'Generic data skills are like a general-purpose tool kit. Domain knowledge is knowing which tool to use in which specific situation. A plumber and an electrician both carry tools — but you would not ask your plumber to rewire your house. Domain fluency is the specialisation that makes a candidate immediately useful to a specific company.',
+   outcomes:['Apply data skills in the specific context of fintech, e-commerce, healthtech, or edtech','Understand the key metrics and decision frameworks of the target industry','Give interview answers that feel grounded and specific, not generic','Add value from week one instead of spending months building domain context'],
+   jobs:['Domain Specialist Analyst','Fintech / E-commerce Analyst','Growth Analyst'],
+   script:'"Any company can hire a generic analyst. They pay a premium for analysts who understand how their specific business works. Domain Analytics gives learners that premium. Whether they are targeting fintech, e-commerce, healthtech, or edtech — they walk into their first interview able to speak the language of the business, not just the language of data. That difference shows up in how interviewers respond, and it shows up again in salary negotiations."'},
 
-{ph:'p2',track:'elective',num:'10',name:'Cloud & Data Analytics on AWS',isElective:true,duration:'1 month',
- tools:'AWS S3, Redshift, Glue, Lambda, Tableau on cloud data',
- biz:'☁️ <strong>Blinkit scenario:</strong> Raw order event data arrives from 500 dark stores every minute — millions of rows per day. This elective builds a production data pipeline: events land in S3, Glue transforms and cleans them, Redshift stores them for analysis, and a live Tableau dashboard shows the category manager what is happening right now — with automated anomaly alerts for stockouts.',
- roles:[{label:'Analytics Eng.',cls:'rp-ds'},{label:'BI Engineer',cls:'rp-ds'}],
- roleDetail:'Recommended for analysts targeting Analytics Engineer or BI Engineer roles, where cloud infrastructure knowledge is a requirement.',
- hook:'"Earlier, students worked on CSV files. Now they work like real companies do — data pipelines on AWS, live dashboards, real production workflows. Cloud experience is a significant hiring differentiator."',
- isNew:true},
+  {id:'m10',num:'10',phase:'Phase 2',phTag:'tag-p2',isElective:true,isNew:true,track:'Analytics track',dur:'1 month',
+   name:'Cloud & Data Analytics on AWS',
+   tools:'AWS S3, Redshift, Glue, Lambda, Tableau on cloud data',
+   story:'At Blinkit, 500 dark stores generate millions of order events every single day. That data needs to go somewhere, get cleaned, and be available for analysis automatically — every day, without anyone manually running anything. The pipeline: raw events land in a storage bucket on AWS called S3, a transformation service picks them up and cleans them via Glue, the cleaned data loads into a cloud warehouse called Redshift, and a live Tableau dashboard connects directly and refreshes automatically. An analyst who can build and own that entire pipeline is worth significantly more than one who can only query a CSV on their laptop.',
+   analogy:'The difference between cooking at home and running a restaurant supply chain. At home you buy what you need when you need it. A supply chain automatically orders, receives, checks, stores, and delivers ingredients to the kitchen every day — without anyone managing it manually. AWS is the infrastructure that makes data work like that at company scale.',
+   outcomes:['Build a production data pipeline from raw events to live dashboard on AWS','Understand the core AWS services every data company uses: S3, Glue, Redshift, Lambda','Demonstrate cloud experience in interviews — which most analyst candidates cannot','Deploy live dashboards connected to cloud data with automated anomaly alerts'],
+   jobs:['Analytics Engineer','BI Engineer','Data Platform Analyst','Senior Data Analyst'],
+   script:'"Cloud experience is now on the requirements list of most mid-to-senior analyst and all analytics engineering roles. But the overwhelming majority of candidates can only show experience with CSV files on their laptops. This elective puts a real, working cloud pipeline on the learner\'s GitHub — not a certificate saying they understand AWS, but a system they built and can demo in any technical interview. That kind of evidence is rare and immediately separates this learner from the rest of the applicant pool."'},
 
-/* ──── PHASE 3 ──── */
-{ph:'p3',track:'elective',num:'11',name:'AI for Everyone',isElective:true,duration:'1 month',
- tools:'ChatGPT, Claude, Gemini, Llama, n8n, Zapier, MindStudio, no-code tools',
- biz:'🌱 <strong>Blinkit scenario:</strong> A non-technical operations manager wants to build an AI bot that monitors their supplier emails, flags urgent delivery delays, and drafts response messages — without writing a single line of code. This elective teaches exactly that. It is the entry point for learners who want to understand and work with AI before going deeper into the technical modules.',
- roles:[{label:'Any professional',cls:'rp-both'}],
- roleDetail:'An elective for learners newer to AI concepts. Builds mental models of how LLMs, agents, and automation work before the maths-heavy modules.',
- hook:'"For learners who want to understand AI before going deep on the technical side. Covers LLM fundamentals, agent workflows, and real-world AI applications in a completely accessible way."',
- isNew:true},
+  {id:'m11',num:'11',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:true,track:'Both tracks',dur:'1 month',
+   name:'AI for Everyone',
+   tools:'ChatGPT, Claude, Gemini, Llama, n8n, Zapier, MindStudio',
+   story:'A Blinkit operations manager wants to stop manually reading 200 supplier emails every week and instead have an AI system that reads them, flags urgent delivery delays, and drafts a response — without writing a single line of code. That is now possible. This elective teaches exactly how. It is designed for learners entering the ML phase who want to understand how AI actually works — what a large language model is, what an AI agent can and cannot do, and how to build real working AI tools without needing a computer science background.',
+   analogy:'This elective is the GPS lesson before the driving lesson. You do not need to understand how GPS satellites orbit the earth to use navigation effectively — but understanding that it works based on your location, calculates routes, and updates in real time makes you a much better navigator. AI for Everyone is that orientation layer before the deep technical dive.',
+   outcomes:['Understand how large language models work without needing a mathematics background','Build working no-code AI agents using n8n, Zapier, and similar tools','Know what AI can and cannot do reliably — so they use it where it helps and recognise where it fails','Arrive at subsequent ML modules with mental models, not just curiosity'],
+   jobs:['Any professional working with AI tools','Strong foundation for all ML and AI engineering modules'],
+   script:'"This elective is for learners who are excited about AI but want to understand it better before going deeper technically. By the end they have built a real working AI agent that solves a real problem — without writing any code. That experience also makes every subsequent technical module click faster, because the learner arrives with context. They are not learning about AI for the first time — they are deepening something they have already experienced and built with."'},
 
-{ph:'p3',track:'ds',num:'12',name:'Mathematical Foundations for AI',isElective:false,duration:'1 month',
- tools:'Python, NumPy, Jupyter notebooks, mathematical visualisation',
- biz:'📐 <strong>Zomato scenario:</strong> A data scientist builds a delivery time prediction model. It has decent accuracy — but in peak hours it is consistently wrong by 10+ minutes. To diagnose why, they need to understand the maths: how is the model learning, where is the gradient descent getting stuck, and which features are pulling the prediction in the wrong direction? This module builds that understanding from scratch.',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'ML Engineer',cls:'rp-ds'}],
- roleDetail:'Required foundation for all ML modules. Most online learners skip this — and then cannot answer the "why" questions in interviews.',
- hook:'"Most online DS learners skip the maths. This module is why Scaler DS graduates can answer the why questions in interviews — and why they do not get caught out when a panel goes deeper than algorithm names."'},
+  {id:'m12',num:'12',phase:'Phase 3',phTag:'tag-p3',isElective:false,isNew:false,track:'DS track',dur:'1 month',
+   name:'Mathematical Foundations for AI',
+   tools:'Python, NumPy, Jupyter notebooks, mathematical visualisation',
+   story:'A data scientist at Zomato builds a delivery time prediction model. It looks decent on paper — average error about four minutes. But in peak hours it is consistently wrong by 12 minutes or more. The data scientist changes algorithms, tweaks parameters, re-runs the code — nothing works. Why? Because without understanding the mathematics of how the model learns, they are guessing. They do not know that certain features are pulling the prediction in the wrong direction, or that the optimisation process is getting stuck. This module gives learners the mathematical intuition to diagnose and fix these problems — not just run code and hope.',
+   analogy:'Imagine learning to drive without understanding what gears, the clutch, or brakes actually do — just memorising which pedal to press when. You might manage on smooth roads. But when something goes wrong you have no idea why, and no idea how to fix it. Mathematical foundations are the understanding of what is happening under the hood of every machine learning model.',
+   outcomes:['Understand linear algebra, probability, and calculus in the context of ML — not as abstract maths','Explain gradient descent, loss functions, and model convergence in plain English','Diagnose why a model is underperforming, not just notice that it is','Answer the "why does this algorithm work?" questions that trip up self-taught DS candidates'],
+   jobs:['Data Scientist (junior to mid)','ML Engineer (junior)'],
+   script:'"Most online data science learners skip the mathematics entirely. They learn to call the functions, get the output, and move on. And for a while that works. Then they get to a senior interview where the panel asks: why is your model underperforming on this segment of data? And they have nothing to say. This module closes that gap permanently. Scaler DS graduates can answer the why questions — which is exactly what every serious DS interview tests."'},
 
-{ph:'p3',track:'ds',num:'13',name:'Machine Learning with AI Workflows',isElective:false,duration:'1 month',
- tools:'scikit-learn, Python, AI-assisted ML tools, feature engineering libraries',
- biz:'🔧 <strong>Blinkit scenario:</strong> The ML team needs to build a seller churn prediction model. Before training a single algorithm, they need to turn raw transaction logs into useful features — recency of last order, frequency over 30 days, category mix, return rate. Building those features correctly is 70% of what makes the model work. This module teaches exactly that — with AI assistance at every step.',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'ML Engineer',cls:'rp-ds'}],
- roleDetail:'Feature engineering is the skill most online learners skip. It is also what most ML interviews test most heavily.',
- hook:'"AI now assists at every stage of the ML workflow. The skill is knowing what problem to solve and validating that the AI got the feature engineering right — because a wrong feature silently degrades model performance."'},
+  {id:'m13',num:'13',phase:'Phase 3',phTag:'tag-p3',isElective:false,isNew:false,track:'DS track',dur:'1 month',
+   name:'Machine Learning with AI Workflows',
+   tools:'scikit-learn, Python, AI-assisted ML tools, feature engineering libraries',
+   story:'Blinkit\'s ML team is building a model to predict which sellers are about to stop selling on the platform — so the account management team can reach out before it is too late. The algorithm choice is almost secondary. The real work is in feature engineering: turning raw transaction records into signals the model can learn from. How many days since the seller\'s last order? What is their 30-day frequency trend? Is their return rate increasing? Has their average order value dropped? Building those features correctly — and making it scale to 50,000 sellers automatically — is 70% of what makes the model work. That is this module.',
+   analogy:'Feature engineering is like preparing ingredients before cooking. The best chef in the world cannot make a great dish from raw, unpeeled, unchopped ingredients straight from the farm. The quality of preparation determines the quality of the outcome. The algorithm is the recipe. The features are the prep work that determines everything.',
+   outcomes:['Design and build feature engineering pipelines for real ML problems','Understand what makes a feature useful versus harmful for a model','Use AI to assist with the mechanical parts while maintaining control of the logic','Explain every feature decision in a technical interview without hesitation'],
+   jobs:['Data Scientist (junior to mid)','ML Engineer (junior)'],
+   script:'"Feature engineering is the skill most interview panels use to separate candidates who genuinely understand machine learning from those who have just run notebooks. The question is never which algorithm did you use — it is how did you decide which features to include, and how did you validate they were actually helping. This module gives learners a real, defensible answer to that question, built on a Blinkit-style problem, not a tutorial dataset."'},
 
-{ph:'p3',track:'ds',num:'14',name:'Supervised Machine Learning with AI',isElective:false,duration:'1 month',
- tools:'scikit-learn, XGBoost, LightGBM, Python, MLflow, model evaluation tools',
- biz:'📦 <strong>Blinkit scenario:</strong> The dark store team needs to know how much stock of each product to order each morning. Too much and products expire. Too little and orders go unfulfilled. This module builds the demand forecasting model that makes that decision — comparing XGBoost, Random Forest, and Logistic Regression, and evaluating them on what matters to the business: stockout cost avoided, not just RMSE.',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'ML Engineer',cls:'rp-ds'}],
- roleDetail:'Supervised ML is the most common DS interview topic. This module makes every demand forecasting and churn prediction question answerable.',
- hook:'"Supervised ML is the most common DS interview topic. This module is built around the demand forecasting and churn prediction problems that Blinkit, Zomato, and every product company actually cares about."'},
+  {id:'m14',num:'14',phase:'Phase 3',phTag:'tag-p3',isElective:false,isNew:false,track:'DS track',dur:'1 month',
+   name:'Supervised Machine Learning with AI',
+   tools:'scikit-learn, XGBoost, LightGBM, Python, MLflow, model evaluation tools',
+   story:'Blinkit needs to know how much stock of each product to order for every dark store, every morning. Too much — products expire, money is wasted. Too little — orders go unfulfilled, customers churn, reviews drop. Currently this involves intuition and rough estimates. A supervised ML model makes it precise: it looks at historical patterns — what sold last Saturday, what the weather was, whether there was a cricket match, what a similar store sold — and predicts what will be needed tomorrow. This module builds exactly that kind of model end to end, and teaches learners to evaluate it not just on model accuracy but on actual business cost saved.',
+   analogy:'Supervised ML is like training a new hire. You show them thousands of examples — here is what happened in this situation, here is the right answer. They study the patterns and eventually make the right call on new situations they have not seen before. The more examples you show them, and the better the examples are, the better they perform.',
+   outcomes:['Build demand forecasting, churn prediction, and classification models end to end','Compare XGBoost, Random Forest, and Logistic Regression on real business datasets','Evaluate models on business impact — not just technical accuracy metrics','Use MLflow to track experiments and identify the best-performing model version'],
+   jobs:['Data Scientist','ML Engineer (junior)','Applied Scientist (junior)'],
+   script:'"Supervised machine learning is the single most tested topic in every data science interview. This module builds it on demand forecasting and churn prediction — the two problems Blinkit, Zomato, and every product company actually uses ML for in production. When a learner says I built a demand forecasting model for a Blinkit-style problem, evaluated it on inventory cost savings, and compared three algorithms using MLflow — that answer is specific, credible, and immediately distinguishable from every other candidate who says I have done machine learning."'},
 
-{ph:'p3',track:'elective',num:'15',name:'Unsupervised Machine Learning with AI',isElective:true,duration:'1 month',
- tools:'scikit-learn, K-Means, DBSCAN, PCA, clustering evaluation tools',
- biz:'👥 <strong>Zomato scenario:</strong> The marketing team wants to run targeted campaigns — but they do not know which customers are similar to each other. This elective builds the customer segmentation model that answers that question: K-Means groups Zomato\'s 80M+ users by ordering behaviour, the team profiles each cluster by lifetime value and category affinity, and marketing designs a different campaign for each segment.',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'Marketing Analyst',cls:'rp-ds'}],
- roleDetail:'Elective for DS learners targeting customer analytics, growth science, or marketing data science roles.',
- hook:'"This is the module that turns data scientists from analysts who describe what happened into scientists who discover things nobody thought to look for."'},
+  {id:'m15',num:'15',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:false,track:'DS track',dur:'1 month',
+   name:'Unsupervised Machine Learning with AI',
+   tools:'scikit-learn, K-Means, DBSCAN, PCA, clustering evaluation tools',
+   story:'Zomato\'s marketing team runs the same promotional campaign to all 80 million users — a 30% discount offer. But 80 million people are not the same. Some order twice a day and would order without any discount. Some ordered once two years ago and probably will not respond to any offer. Some are price-sensitive occasional users who respond very well to 30% off. Treating all of them the same means spending crores of budget on people who would have ordered anyway. Unsupervised ML — specifically clustering — finds the natural groups in the data without being told what to look for. Then you design different strategies for each group.',
+   analogy:'Imagine you are a new teacher and 40 students walk into your classroom. After a few weeks, patterns emerge — some learn quickly from text, some need diagrams, some ask questions constantly, some prefer to figure things out alone. You did not tell them to form those groups — they emerged naturally from how they behave. Clustering finds those natural groups in any dataset, at any scale, automatically.',
+   outcomes:['Build customer segmentation models using K-Means and DBSCAN on real behavioural data','Evaluate cluster quality rigorously — not just visually','Profile each segment by value, behaviour, and churn risk','Translate segmentation output into a concrete strategy recommendation'],
+   jobs:['Data Scientist','Customer Analytics Scientist','Marketing Data Scientist'],
+   script:'"Segmentation is one of the most requested deliverables from a data science team — and one of the questions that comes up most in DS interviews. The difference between a weak answer and a strong one is not the algorithm — it is whether the learner can explain what makes a good cluster, how they validated it, and what the business should do differently for each segment. This elective builds all of that on a Zomato-scale customer dataset with a real strategy recommendation at the end."'},
 
-{ph:'p3',track:'elective',num:'16',name:'Time Series and Recommender Systems with AI Workflows',isElective:true,duration:'1 month',
- tools:'statsmodels, ARIMA, collaborative filtering, surprise library, Python',
- biz:'📅 <strong>Blinkit scenario:</strong> The supply chain team needs to know how much milk, bread, and eggs each dark store will need next Saturday — accounting for a local festival, a cricket match, and a weather forecast. This elective builds the seasonal demand forecasting model that makes that prediction, and the recommendation engine that powers the "frequently bought together" feature that increases average order value.',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'Rec. Sys. Eng.',cls:'rp-ds'}],
- roleDetail:'Elective for DS learners targeting supply chain, e-commerce, or streaming platform roles where forecasting and recommendation are core.',
- hook:'"Demand forecasting and recommendation systems are the two ML use cases that drive the most revenue at product companies. This elective builds both from scratch."'},
+  {id:'m16',num:'16',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:false,track:'DS track',dur:'1 month',
+   name:'Time Series & Recommender Systems with AI Workflows',
+   tools:'statsmodels, ARIMA, collaborative filtering, surprise library, Python',
+   story:'Two problems that drive enormous revenue at every consumer product company — and both need specific ML techniques. At Blinkit: knowing how much milk, bread, and eggs each dark store needs next Saturday — accounting for a local festival, a cricket final, last week\'s weather, and a school holiday. That is time series forecasting. At Zomato: knowing that a user who just ordered South Indian at 8pm on a Saturday is likely to order again Sunday morning, and showing them a relevant recommendation before they even think to search. That is a recommender system. Both are built in this elective, end to end.',
+   analogy:'Time series is like reading the rhythm of a song — once you understand the pattern, you can predict what note comes next. Recommender systems are like a knowledgeable friend who knows your tastes and says "you would love this" before you have asked — because they have learned from everything you have done before.',
+   outcomes:['Build seasonal demand forecasting models accounting for festivals, weekly patterns, and growth trends','Build collaborative filtering recommendation systems for product or content platforms','Understand when to use each technique — and when not to','Demonstrate two of the highest-impact ML use cases in any e-commerce or consumer interview'],
+   jobs:['Data Scientist (mid-level)','Recommender Systems Engineer','Applied Scientist'],
+   script:'"Demand forecasting and recommendation systems are the two ML applications that generate the most directly measurable revenue impact at product companies — which is why they appear so explicitly in DS job descriptions. Learners who have actually built both, on realistic data, and can walk through the trade-offs in an interview are in a meaningfully stronger position than candidates who have only studied them conceptually."'},
 
-{ph:'mlops',track:'elective',num:'17',name:'MLOps & AI Deployment',isElective:true,duration:'1 month',
- tools:'MLflow, Docker, GitHub Actions, AWS, model monitoring tools',
- biz:'🚀 <strong>Zomato scenario:</strong> A data scientist builds a great restaurant fraud detection model. It works perfectly in their notebook. Then it gets deployed — and two weeks later, the model\'s precision drops from 91% to 74% because the patterns of fraud have shifted. This elective teaches how to containerise a model with Docker, version it with MLflow, set up auto-retraining pipelines, and monitor for performance drift before it becomes a business problem.',
- roles:[{label:'ML Engineer',cls:'rp-ds'},{label:'Data Scientist',cls:'rp-ds'}],
- roleDetail:'Elective for DS learners targeting ML Engineer or Applied Scientist roles where production model ownership is expected.',
- hook:'"The gap between data scientists who build models and data scientists who ship products. Every serious DS role now expects MLOps fluency. This elective closes that gap with working production evidence."'},
+  {id:'m17',num:'17',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:false,track:'DS track',dur:'1 month',
+   name:'MLOps & AI Deployment',
+   tools:'MLflow, Docker, GitHub Actions, AWS, model monitoring tools',
+   story:'A Zomato data scientist builds an excellent fraud detection model — 91% precision. It gets deployed to production and everyone is happy. Six weeks later, metrics show precision has dropped to 74%. What happened? Fraudsters adapted their behaviour. The patterns the model learned no longer match live data. Without monitoring, nobody noticed until significant damage was done. MLOps is the set of practices that prevents this — versioning models so you can roll back instantly, setting up automated retraining when performance drifts, and building monitoring that alerts the team before the business feels the impact.',
+   analogy:'A model without MLOps is like a car without a service schedule — it works great when new, but without maintenance, oil changes, and monitoring, it silently degrades until it stops working entirely. MLOps is the maintenance and monitoring system for ML models in production. It is the difference between shipping a model and owning it.',
+   outcomes:['Containerise ML models with Docker so they run identically in any environment','Track every experiment with MLflow so the best version is always identifiable and rollback-ready','Build CI/CD pipelines that automatically retrain models when data distribution shifts','Set up monitoring that alerts the team to performance degradation before it affects the business'],
+   jobs:['ML Engineer','Applied Scientist','Senior Data Scientist'],
+   script:'"The gap between a data scientist who builds models and one who ships products is MLOps. Most DS candidates cannot demonstrate it because you need real infrastructure to practice it. This elective gives learners a working Docker container, a live MLflow experiment tracker, and a CI/CD pipeline on their GitHub — a combination almost no DS candidate has. For anyone targeting ML Engineer or Applied Scientist roles, this is one of the highest-leverage electives in the programme."'},
 
-{ph:'p3',track:'elective',num:'18',name:'Deep Learning & Neural Networks',isElective:true,duration:'1 month',
- tools:'TensorFlow, PyTorch, Keras, GPU training, transfer learning frameworks',
- biz:'🧠 <strong>Blinkit scenario:</strong> The quality team needs a model that inspects product images uploaded by new sellers — flagging low-resolution photos, watermarks, and prohibited content before they go live in the app. This elective builds that image classification system using a fine-tuned convolutional network — the same approach used at scale by every major e-commerce platform.',
- roles:[{label:'ML Engineer',cls:'rp-ds'},{label:'Research Sci.',cls:'rp-ds'}],
- roleDetail:'Elective for DS learners targeting senior data science or ML engineering roles where deep learning expertise is expected.',
- hook:'"Every senior DS role now assumes deep learning. This elective makes that assumption correct — with a working computer vision portfolio piece on GitHub."'},
+  {id:'m18',num:'18',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:false,track:'DS track',dur:'1 month',
+   name:'Deep Learning & Neural Networks',
+   tools:'TensorFlow, PyTorch, Keras, GPU training, transfer learning',
+   story:'Blinkit receives 10,000 new product images from sellers every week — each one needs checking before going live. Is it high enough resolution? Does it show the actual product? Is there a watermark? Are there prohibited items? Human review at that scale is not feasible. A deep learning model — specifically a convolutional neural network — learns to detect all of those issues automatically by studying thousands of examples. It sees an image and classifies it in milliseconds: acceptable, low resolution, watermark present. This module builds the understanding of how that works and the practical skill to build it.',
+   analogy:'A convolutional neural network looks at an image the way a human expert would — but instead of conscious thought, it is millions of mathematical operations happening simultaneously. Each layer of the network looks for something slightly more complex than the last: the first finds edges, the second finds shapes, the third finds objects. By the end it recognises things no one explicitly programmed it to find.',
+   outcomes:['Understand how neural networks learn through backpropagation — not just that they do','Build CNN-based image classification models for real product problems','Apply transfer learning to fine-tune pre-trained models on new tasks efficiently','Present a working computer vision portfolio project that is genuinely rare among DS candidates'],
+   jobs:['Senior Data Scientist','ML Engineer (mid-senior)','Research Scientist'],
+   script:'"Every senior DS role now assumes deep learning knowledge — it is listed on the JD and the interview panel will probe it. The question is not whether to cover it. The question is whether the learner can demonstrate it with a working project. This elective produces exactly that: a working image quality inspection system, on GitHub, built with YOLOv8 and EfficientNet. Computer vision portfolio evidence is rare — most DS candidates have studied it but very few have shipped something. That distinction is immediately visible in an interview."'},
 
-{ph:'p3',track:'elective',num:'19',name:'AI for Computer Vision',isElective:true,duration:'1 month',
- tools:'YOLOv8, EfficientNet, PyTorch, image processing libraries, cloud GPU',
- biz:'📷 <strong>Blinkit scenario:</strong> The warehouse operations team runs a quality check on every order before dispatch — but at 50,000 orders per day, human inspection is not scalable. This elective builds the automated inspection system: a YOLOv8 model on warehouse cameras that detects damaged or incorrect products at full throughput, classifies severity, and routes critical issues to a human reviewer instantly.',
- roles:[{label:'ML Engineer',cls:'rp-ds'},{label:'AI Engineer',cls:'rp-ds'}],
- roleDetail:'Specialist elective for DS learners targeting computer vision roles in e-commerce, logistics, manufacturing, or healthtech.',
- hook:'"Computer vision is one of the highest-value ML applications in e-commerce and logistics. This elective is the difference between a DS profile and a specialist AI engineering profile."'},
+  {id:'m19',num:'19',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:false,track:'DS track',dur:'1 month',
+   name:'AI for Computer Vision',
+   tools:'YOLOv8, EfficientNet, PyTorch, image processing, cloud GPU',
+   story:'At Blinkit\'s warehouses, 50,000 orders pass through a fulfilment process every day. A human checking every package for damage is not scalable at that volume. A computer vision system on warehouse cameras does it in real time — YOLOv8 identifies damaged packaging, wrong products, or missing items on a moving conveyor belt at full speed, classifies the severity, and routes critical issues to a human reviewer within seconds. No human could do this reliably at this speed and scale. This elective builds the skills to design and deploy exactly this kind of real-time vision system.',
+   analogy:'Computer vision is giving a machine the ability to see and understand — the same way a quality inspector on a production line does, but at 100 times the speed, without fatigue, and with a detailed log of every decision it made. It is not magic — it is pattern recognition trained on thousands of examples of what good and bad look like.',
+   outcomes:['Build object detection systems using YOLOv8 on real business imagery','Implement real-time classification pipelines that operate at production throughput','Understand and explain precision-recall trade-offs in the context of specific business costs','Present specialist CV portfolio evidence that is rare among DS and ML candidates'],
+   jobs:['ML Engineer','AI Engineer','Computer Vision Specialist'],
+   script:'"Computer vision is one of the highest-salary ML specialisations — and one of the most portfolio-dependent. A learner who has a working YOLOv8 defect detection system on GitHub is in a completely different conversation from someone who says I have knowledge of computer vision. This elective is for learners who want to specialise and separate themselves from the general DS hiring pool — particularly in e-commerce, logistics, manufacturing, and healthtech."'},
 
-{ph:'p3',track:'elective',num:'20',name:'AI for Natural Language Processing',isElective:true,duration:'1 month',
- tools:'Hugging Face Transformers, BERT, spaCy, NLP evaluation tools',
- biz:'💬 <strong>Zomato scenario:</strong> Zomato receives 5 million customer reviews per week. The quality team cannot read them manually. This elective builds the NLP pipeline that processes all 5 million — classifying each review by sentiment, issue type, and urgency, extracting the specific restaurant or delivery partner mentioned, and flagging patterns for the quality team to act on before a bad restaurant goes viral.',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'NLP Engineer',cls:'rp-ds'}],
- roleDetail:'Specialist elective for DS learners targeting NLP, conversational AI, or content intelligence roles.',
- hook:'"NLP with transformers applied to a real business problem — not sentiment analysis on movie reviews. Customer intelligence at scale is a live production system at every major product company."'},
+  {id:'m20',num:'20',phase:'Phase 3',phTag:'tag-p3',isElective:true,isNew:false,track:'DS track',dur:'1 month',
+   name:'AI for Natural Language Processing',
+   tools:'Hugging Face Transformers, BERT, spaCy, NLP evaluation tools',
+   story:'Zomato receives 5 million customer reviews every week. The quality team wants to know: which restaurants are getting complaints about delivery time? Which areas are seeing an increase in wrong item issues? No human team can read 5 million reviews. An NLP pipeline can. A fine-tuned BERT model reads each review, extracts the restaurant name, classifies the sentiment, identifies the issue type, and flags emerging patterns — automatically, at scale, in near real time. This elective builds exactly that kind of text intelligence system.',
+   analogy:'NLP is like teaching a computer to read and understand language the way a human would — picking up on tone, context, and meaning, not just keywords. The difference between a model that searches for the word bad and one that understands the food arrived cold after 90 minutes and the packaging was damaged are two different severity complaints — that is the difference between keyword matching and genuine language understanding.',
+   outcomes:['Fine-tune BERT for text classification on real business datasets','Build entity extraction pipelines that pull structured information from unstructured text','Understand trade-offs between different NLP architectures for different task types','Present an NLP portfolio project built on a real, recognisable business problem'],
+   jobs:['Data Scientist (NLP focus)','NLP Engineer','Conversational AI Specialist'],
+   script:'"NLP with transformers is the fastest-growing DS specialisation in terms of job openings — driven by every company\'s need to process customer text at scale. The Customer Support Intelligence capstone — automatically triaging and routing Zomato-style support tickets using BERT — is one of the most relatable ML portfolio projects a candidate can present. Every interviewer at a consumer company immediately understands the problem and the value of the solution."'},
 
-{ph:'p3',track:'ds',num:'21',name:'AI Engineering and Agentic AI',isElective:false,duration:'1 month',
- tools:'LangChain, LangGraph, RAG systems, vector databases, embedding models',
- biz:'🤖 <strong>Zomato + Blinkit scenario:</strong> Zomato\'s legal team needs an AI assistant that can answer "what is our current cancellation policy for restaurant partners in Tier 2 cities?" with the actual current policy — not a guess. Blinkit\'s ops team needs an AI agent that monitors supplier emails, detects delivery delays, cross-checks against open orders, and automatically drafts escalation messages — all without a human in the loop. This module builds both.',
- roles:[{label:'AI Engineer',cls:'rp-ds'},{label:'Data Scientist',cls:'rp-ds'}],
- roleDetail:'Core module for DS track. AI Engineering is the fastest-growing job category in tech. This module builds the skills the market is actively paying for.',
- hook:'"AI Engineering and Agentic AI — the fastest-growing job category in tech right now. Companies like Zomato, Swiggy, and every funded startup are actively hiring for these skills. This module puts learners at the frontier."',
- isNew:true},
+  {id:'m21',num:'21',phase:'Phase 3',phTag:'tag-p3',isElective:false,isNew:true,track:'DS track',dur:'1 month',
+   name:'AI Engineering and Agentic AI',
+   tools:'LangChain, LangGraph, RAG systems, vector databases, embedding models',
+   story:'Zomato\'s operations team records every vendor review meeting. Six months later, nobody can find what was agreed about a specific supplier\'s delivery terms. All that knowledge is locked in video recordings nobody rewatches. Separately, Blinkit\'s vendor team gets 500 emails a week from suppliers — delays, quantity changes, price revisions. Someone has to read every one and decide what to do. Agentic AI solves both. A RAG system reads all the meeting recordings, indexes them, and answers "what did we decide about the Haldiram\'s delivery SLA in October?" with the actual answer from the actual recording. An agentic workflow reads each supplier email, classifies urgency, cross-checks open orders, and drafts an escalation message for the team to review. This module builds both.',
+   analogy:'An AI agent is like an extremely capable new employee who never sleeps, never forgets anything, can read a thousand documents in seconds, and will follow a process exactly the same way every single time — but still needs a manager to define the process and review the important decisions. RAG is giving that employee access to the company\'s entire knowledge base so they answer from actual company information rather than guessing.',
+   outcomes:['Build RAG systems that answer questions from a specific knowledge base — not from general AI training','Design agentic workflows that chain multiple steps to complete complex business tasks autonomously','Work with vector databases, embedding models, and LangChain/LangGraph to build production AI systems','Demonstrate the exact skills that AI Engineering job descriptions are actively listing right now'],
+   jobs:['AI Engineer','Applied Scientist','Senior ML Engineer','Data Science Lead'],
+   script:'"AI Engineering is the fastest-growing job category in tech — and the one with the highest starting salaries among all data and ML roles. Companies like Zomato, PhonePe, Razorpay, and every well-funded startup are either already running agentic AI systems or actively trying to hire people to build them. A learner who finishes this module with a working RAG system and an agentic workflow on their GitHub is positioned for roles that simply did not exist two years ago — and demand is growing faster than supply."'},
 ];
 
-function renderMods(ph){
-  const g=document.getElementById('mod-grid');g.innerHTML='';
-  let list;
-  if(ph==='all') list=modules;
-  else if(ph==='elective') list=modules.filter(m=>m.isElective);
-  else if(ph==='core') list=modules.filter(m=>!m.isElective);
-  else list=modules.filter(m=>m.ph===ph);
-
-  list.forEach(m=>{
-    const d=document.createElement('div');d.className='mc';
-    const tLabel=trackPillLabel[m.track]||m.track;
-    const tCls=trackPillCls[m.track]||'tp-all';
-    const newBadge=m.isNew?'<span class="badge b-new" style="margin-left:6px">New in 3.0</span>':'';
-    const electiveBadge=m.isElective?'<span class="badge b-elective" style="margin-left:4px">Elective</span>':'<span class="badge b-core" style="margin-left:4px">Core</span>';
-    const rolePills=m.roles.map(r=>'<span class="role-pill '+r.cls+'">'+r.label+'</span>').join('');
-
-    d.innerHTML=
-      '<div class="mc-phase">Module '+m.num+' · '+m.duration+'</div>'+
-      '<div class="card-top"><div class="mc-name">'+m.name+newBadge+electiveBadge+'</div><span class="badge '+phBadge[m.ph]+'">'+phLabel[m.ph]+'</span></div>'+
-      '<div class="mc-tools">'+m.tools+'</div>'+
-      '<span class="track-pill '+tCls+'">'+tLabel+'</span>'+
-      '<hr class="divider">'+
-      '<div class="mc-section">'+
-        '<div class="mc-section-lbl">The Business Problem This Solves</div>'+
-        '<div class="mc-biz">'+m.biz+'</div>'+
-      '</div>'+
-      '<div class="mc-section">'+
-        '<div class="mc-section-lbl">Who uses these skills at a company</div>'+
-        '<div class="role-row">'+rolePills+'</div>'+
-        '<div style="font-size:11.5px;color:#57534e;line-height:1.5;margin-bottom:6px">'+m.roleDetail+'</div>'+
-      '</div>'+
-      '<div class="hook-box"><div class="lbl" style="margin-bottom:3px">Sales hook</div><div class="hook-txt">'+m.hook+'</div></div>';
-    g.appendChild(d);
-  });
-}
-renderMods('all');
-
-function filterMods(ph,btn){
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderMods(ph);
-}
-
-/* ══ CAPSTONES ══ */
-const capstones=[
-{track:'Analytics track',c:'#ea580c',name:'Food Delivery Analytics System',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Product Analyst',cls:'rp-analyst'}],
- biz:'Business problem: Zomato\'s product team needs to understand why users who place their first order do not come back for a second one — and what the app should do differently to fix it.',
- what:'Learners build a complete analytics system on Zomato-style data: funnel analysis tracking every step from app open to order placed, cohort analysis comparing first-month retention across different user segments, and an AI-generated weekly insight report that explains what changed and why.',
- pitch:'"A working product analytics system — not a tutorial. The funnel work, cohort analysis, and AI insight generation are all directly demonstrable in a Product Analyst interview. Every interviewer who sees this portfolio piece knows the learner has done real work."'},
-{track:'Analytics track',c:'#f59e0b',name:'Content Platform Analytics',
- roles:[{label:'Data Analyst',cls:'rp-analyst'},{label:'Content Analyst',cls:'rp-analyst'}],
- biz:'Business problem: A streaming platform (think Hotstar or Moj) needs to understand which content types keep users watching the longest — and which genres are silently driving churn by disappointing users after the first episode.',
- what:'Learners build watch-time analysis across content types and user segments, content performance benchmarking with AI-driven anomaly detection, and a retention dashboard that shows which content decisions are paying off and which are not.',
- pitch:'"Retention analysis on streaming data is one of the most discussed case studies in product and data interviews. Candidates who have actually built it — not just studied it — stand out immediately in any interview at a media or consumer tech company."'},
-{track:'Analytics track',c:'#0284c7',name:'End-to-End Cloud Analytics Pipeline',
- roles:[{label:'Analytics Eng.',cls:'rp-ds'},{label:'BI Engineer',cls:'rp-ds'}],
- biz:'Business problem: Blinkit\'s business team needs to stop asking the data team for every number. They want a self-service dashboard that shows live category performance — always current, always reliable.',
- what:'Learners build the full pipeline from scratch: raw event data lands in AWS S3, Glue transforms and cleans it, Redshift stores it for analysis, and a live Tableau dashboard surfaces the results — refreshing automatically every 15 minutes with AI-generated anomaly alerts.',
- pitch:'"This is the project that demonstrates cloud experience — the thing most analyst candidates cannot show. A live Tableau dashboard connected to a Redshift warehouse they built themselves. That goes on the resume and immediately distinguishes the candidate from 90% of applicants for BI and analytics engineering roles."'},
-{track:'Data Science track',c:'#4338ca',name:'Smart Customer Intelligence Platform',
- roles:[{label:'Data Scientist',cls:'rp-ds'},{label:'ML Engineer',cls:'rp-ds'}],
- biz:'Business problem: Zomato\'s marketing team is spending money on campaigns that treat all customers the same. But a user who orders once a week is completely different from a user who orders 3 times a day. The team needs to know who is who — and design different strategies for each group.',
- what:'Learners build complete customer segmentation using K-Means and DBSCAN on Zomato-style data, per-segment demand forecasting with XGBoost and Random Forest, dynamic pricing recommendations based on segment sensitivity, and an interactive dashboard with revenue impact analysis per segment strategy.',
- pitch:'"Two of the three most commonly asked DS interview topics — segmentation and demand forecasting — in a single end-to-end system. Built on food delivery data that every interviewer recognises. Directly demonstrable. This project alone has helped learners clear DS interviews at Swiggy, Myntra, and Dunzo."'},
-{track:'Data Science track',c:'#0d9488',name:'Automated Quality Inspection System',
- roles:[{label:'ML Engineer',cls:'rp-ds'},{label:'CV Engineer',cls:'rp-ds'}],
- biz:'Business problem: Blinkit needs to check the quality of product images submitted by sellers before they go live. At 10,000 new products per week, human review is not scalable. The team needs an automated system that catches bad images instantly.',
- what:'Learners fine-tune YOLOv8 and EfficientNet to detect and classify image quality issues — low resolution, watermarks, prohibited content, wrong product shown. The system produces a confidence score and routes borderline cases to a human reviewer, with a precision-recall analysis that explains the trade-off between catching every bad image and approving good ones quickly.',
- pitch:'"Computer vision portfolio evidence is rare. A learner who can explain the trade-off between precision and recall on a real quality inspection problem — and show a working system — is immediately differentiated in any ML interview. This is the kind of project that gets callbacks at Flipkart, Meesho, and Nykaa."'},
-{track:'Data Science track',c:'#7c3aed',name:'Customer Support Intelligence Engine',
- roles:[{label:'NLP Engineer',cls:'rp-ds'},{label:'Data Scientist',cls:'rp-ds'}],
- biz:'Business problem: Zomato receives 200,000 customer support tickets per week. The team cannot manually triage them all. Critical issues — wrong order delivered, food poisoning complaint, payment failure — need to reach the right team within minutes, not hours.',
- what:'Learners build a BERT-based classifier that reads each support ticket and predicts the issue type, urgency level, and which team should own it — extracting order IDs and restaurant names automatically. The pipeline routes critical tickets before SLA breach and drafts an initial response for the support agent to review.',
- pitch:'"NLP with transformers applied to a real business problem — not sentiment analysis on movie reviews. Customer support intelligence is a live production system at Zomato, Amazon, and every product company at scale. This project shows depth, real-world problem understanding, and production thinking — all in one."'},
-{track:'Data Science track',c:'#4338ca',name:'Multi-Modal AI Search Engine',
- roles:[{label:'AI Engineer',cls:'rp-ds'},{label:'ML Engineer',cls:'rp-ds'}],
- biz:'Business problem: Blinkit\'s operations team records every supplier review call. Six months later, no one can find what was decided about the Haldiram\'s contract. All that knowledge is locked in video recordings that nobody has time to watch.',
- what:'Learners build a multi-modal search engine that ingests video recordings, extracts audio transcripts and visual frame embeddings, and creates a searchable index. Query it with a text question — get back the exact video moment that answers it. An agentic retrieval layer decides whether to search the transcript, the visual frames, or both depending on the query.',
- pitch:'"Multi-modal AI is the frontier. A learner who has built a working video-text search engine with agentic retrieval logic is demonstrating the exact capability that AI engineering teams at Swiggy, PhonePe, and every well-funded startup are hiring for right now. This is the project that opens senior-level conversations."'},
+const analyticsTrack=[
+  {mod:'Advanced SQL & AI',ph:'Phase 1',roles:['Reporting Analyst','Junior Data Analyst']},
+  {mod:'Dashboarding + AI Storytelling',ph:'Phase 1',roles:['Data Analyst (entry)','Business Analyst']},
+  {mod:'Python Foundations',ph:'Phase 1',roles:['Data Analyst','Analytics Engineer (junior)']},
+  {mod:'Product Analytics with AI',ph:'Phase 1',roles:['Product Analyst','Data Analyst (mid)']},
+  {mod:'Gen AI for Analytics',ph:'Phase 1',isNew:true,roles:['AI-augmented Analyst','Senior Data Analyst']},
+  {mod:'Advanced Pandas Pipelines',ph:'Phase 2',roles:['Senior Data Analyst','Analytics Engineer']},
+  {mod:'Statistics & Experimentation',ph:'Phase 2',roles:['Experimentation Analyst','Product Data Analyst']},
+  {mod:'Advanced Product Analytics',ph:'Phase 2 Elective',roles:['Analytics Lead','Senior Product Analyst']},
+  {mod:'Domain Analytics',ph:'Phase 2',roles:['Domain Analyst','Growth Analyst']},
+  {mod:'Cloud & AWS',ph:'Phase 2 Elective',isNew:true,roles:['BI Engineer','Data Platform Analyst']},
+  {mod:'Interview Readiness',ph:'Phase 1 Elective',roles:['Data Analyst (top companies)','Senior Analyst (unicorns)']},
+];
+const dsTrack=[
+  {mod:'Advanced SQL & AI',ph:'Phase 1',roles:['Junior Data Analyst','Reporting Analyst']},
+  {mod:'Python Foundations',ph:'Phase 1',roles:['Data Analyst','Junior Data Scientist']},
+  {mod:'Product Analytics with AI',ph:'Phase 1',roles:['Product Analyst','Junior Data Scientist']},
+  {mod:'Gen AI for Analytics',ph:'Phase 1',isNew:true,roles:['AI-augmented Analyst']},
+  {mod:'Statistics & Experimentation',ph:'Phase 2',roles:['Experimentation Analyst','Junior Data Scientist']},
+  {mod:'Domain Analytics',ph:'Phase 2',roles:['Domain Data Scientist']},
+  {mod:'Mathematical Foundations',ph:'Phase 3',roles:['Junior Data Scientist','ML Engineer (junior)']},
+  {mod:'ML with AI Workflows',ph:'Phase 3',roles:['Data Scientist','ML Engineer']},
+  {mod:'Supervised ML',ph:'Phase 3',roles:['Data Scientist','Applied Scientist (junior)']},
+  {mod:'Unsupervised ML',ph:'Phase 3 Elective',roles:['Customer Analytics Sci.','Marketing Data Sci.']},
+  {mod:'Time Series + Recommender Sys.',ph:'Phase 3 Elective',roles:['Data Scientist (mid)','Rec. Systems Engineer']},
+  {mod:'MLOps & AI Deployment',ph:'Phase 3 Elective',roles:['ML Engineer','Applied Scientist']},
+  {mod:'Deep Learning',ph:'Phase 3 Elective',roles:['Senior Data Scientist','ML Engineer (mid-senior)']},
+  {mod:'AI Engineering & Agentic AI',ph:'Phase 3',isNew:true,roles:['AI Engineer','Data Science Lead','Applied Scientist (senior)']},
 ];
 
-function renderCaps(){
-  const g=document.getElementById('cap-grid');
-  capstones.forEach(c=>{
-    const d=document.createElement('div');d.className='cc';
-    d.style.borderTop='3px solid '+c.c;
-    const rolePills=c.roles.map(r=>'<span class="role-pill '+r.cls+'">'+r.label+'</span>').join('');
-    d.innerHTML=
-      '<div class="cc-track" style="color:'+c.c+'">'+c.track+'</div>'+
-      '<div class="cc-name">'+c.name+'</div>'+
-      '<div class="cc-roles">'+rolePills+'</div>'+
-      '<div class="lbl">The business problem</div>'+
-      '<div class="cc-biz">'+c.biz+'</div>'+
-      '<div class="lbl" style="margin-bottom:3px">What the learner builds</div>'+
-      '<div class="cc-what">'+c.what+'</div>'+
-      '<div class="cc-pitch">'+c.pitch+'</div>';
-    g.appendChild(d);
-  });
-}
-renderCaps();
-
-/* ══ PROFILES ══ */
-const profiles=[
-{icon:'🌱',bg:'#fff7ed',name:'Complete beginner',sub:'Zero coding or data background',
- gap:'Has no SQL, no Python, no statistics — and no idea where to start. Every "learn data science" resource online assumes some prior knowledge, moves too fast, or teaches tools in isolation without connecting them to real business problems. The learning gap feels enormous.',
- gain:'The programme is built for exactly this starting point. AI assists at every step — generating code, explaining errors, suggesting approaches — which makes the learning curve manageable from day one. By the end of Phase 1, the learner is SQL-fluent, Python-capable, and building real dashboards with AI-powered insight narratives. The Zomato and Blinkit examples throughout make every concept feel real, not abstract.',
- from:'Zero data background',to:'Data Analyst at a product company (12–18 months)',
- mods:['SQL and AI','Python foundations','Product analytics','Dashboarding','Gen AI for analytics']},
-{icon:'📊',bg:'#fff7ed',name:'Non-tech professional',sub:'Finance, marketing, operations — wants data skills',
- gap:'Can think analytically but cannot execute. Has probably used Excel, maybe Power BI, but writes no code and cannot query a database independently. Relies on the data team for every number. Knows this is a career ceiling and wants to remove it.',
- gain:'Phases 1 and 2 give this person complete independence — they can pull, analyse, visualise, and explain their own data without asking the data team. The product analytics module connects immediately to the business problems they already understand. The Gen AI integration means they get 10x more done in the same time.',
- from:'Operations / finance professional',to:'Data Analyst / Product Analyst',
- mods:['SQL and AI','Dashboarding','Product analytics','Gen AI for analytics','Statistics']},
-{icon:'🔄',bg:'#dcfce7',name:'Career switcher',sub:'Completely different field — targeting data roles',
- gap:'Has professional experience and soft skills but no technical credentials. Feels permanently locked out of data roles because they do not have the degree or the prior job title. Applying without a portfolio and the right technical background gets CVs screened out automatically.',
- gain:'The portfolio-first approach is the direct answer. Three to four end-to-end capstone projects — built on Zomato and Blinkit problems, demonstrable in interviews, on GitHub — replace the missing prior experience as a signal of capability. The programme also covers interview readiness explicitly.',
- from:'Professional in an unrelated field',to:'Data Analyst or Junior Data Scientist',
- mods:['Full programme','Capstone projects','Interview readiness','Product analytics']},
-{icon:'⬆',bg:'#e0e7ff',name:'Existing data analyst',sub:'Has SQL and Excel — wants AI and DS skills',
- gap:'Can do the job they are in but cannot see a path to the next level. Does not know statistics rigorously, has not touched ML, and has no AI workflow skills. Every senior role requires at least one of these three and most now require all three.',
- gain:'Phases 2 and 3 are the targeted upgrade. Statistics and experimentation close the gap that makes A/B testing questions terrifying. The ML modules add the capability that every DS title now assumes. The Gen AI and Agentic AI electives put the learner at the frontier of what companies are hiring for.',
- from:'Data Analyst (2–4 years)',to:'Senior Analyst / Junior Data Scientist / AI Analyst',
- mods:['Statistics and A/B testing','Supervised ML','Advanced product analytics','MLOps','Gen AI and Agentic AI']},
-{icon:'🤖',bg:'#f5f3ff',name:'Developer / engineer moving into data',sub:'Can code — wants to specialise in data science',
- gap:'Technically strong but missing the data-specific thinking. Can write Python fluently but has never done feature engineering, never designed an A/B test, never deployed a model in production, and does not think in terms of business metrics.',
- gain:'The statistics, ML, and MLOps modules give this person the data science layer on top of their engineering foundation. They move through the Python content quickly and spend their learning time on the material they are missing. The MLOps and Agentic AI modules are where an engineering background becomes a significant advantage.',
- from:'Software / backend engineer',to:'ML Engineer / Data Scientist / AI Engineer',
- mods:['Statistics and experimentation','ML with AI','MLOps deployment','Deep learning','AI Engineering and Agentic AI']}
-];
+/* ── RENDER ── */
 function renderProfiles(){
   const g=document.getElementById('profile-grid');
   profiles.forEach(p=>{
     const d=document.createElement('div');d.className='pc';
-    d.innerHTML=
-      '<div class="pc-hdr">'+
-        '<div class="pc-icon" style="background:'+p.bg+'">'+p.icon+'</div>'+
-        '<div><div class="pc-name">'+p.name+'</div><div class="pc-sub">'+p.sub+'</div></div>'+
-      '</div>'+
-      '<div class="gap-box"><div class="gap-lbl">What they are missing today</div><div class="gap-txt">'+p.gap+'</div></div>'+
-      '<div class="gain-box"><div class="gain-lbl">What this programme adds</div><div class="gain-txt">'+p.gain+'</div></div>'+
-      '<div class="mp-lbl">Modules that do the most work</div>'+
-      '<div class="mp-pills">'+p.mods.map(m=>'<span class="mpill">'+m+'</span>').join('')+'</div>'+
-      '<div class="jump-row"><span class="jump-from">'+p.from+'</span><span class="jump-arrow">→</span><span class="jump-to">'+p.to+'</span></div>';
+    d.innerHTML=`<div class="pc-head"><div class="pc-ico" style="background:${p.bg}">${p.icon}</div><div><div class="pc-title">${p.name}</div><div class="pc-role">${p.role}</div></div></div><div class="info-box gap"><div class="info-lbl" style="color:#9a4a0a">What they are missing today</div><div class="info-txt">${p.gap}</div></div><div class="info-box gain"><div class="info-lbl" style="color:#14532d">What this programme adds</div><div class="info-txt">${p.gain}</div></div><div class="info-lbl" style="margin-bottom:6px">Key modules for this profile</div><div class="mod-pills">${p.mods.map(m=>`<span class="mpill">${m}</span>`).join('')}</div><div class="jump"><span class="j-from">${p.from}</span><span class="j-arr">→</span><span class="j-to">${p.to}</span></div>`;
     g.appendChild(d);
   });
 }
+
+function renderJourney(){
+  const phases=[
+    {label:'Phase 1',cls:'ph-1',title:'Foundations',desc:'The skills that form the base of every data career — SQL, Python, dashboarding, and AI-powered analytics. Everyone goes through Phase 1, regardless of track.'},
+    {label:'Phase 2',cls:'ph-2',title:'Intermediate Analytics',desc:'Advanced pipelines, statistics, experimentation, domain knowledge. The modules that move a learner from junior to mid-senior territory.'},
+    {label:'Phase 3',cls:'ph-3',title:'Machine Learning & AI',desc:'The full ML stack — from mathematical foundations through supervised and unsupervised learning, deep learning, MLOps, and AI Engineering.'},
+  ];
+  const c=document.getElementById('journey-content');
+  phases.forEach(ph=>{
+    const mods=modules.filter(m=>m.phase===ph.label);
+    const block=document.createElement('div');block.className='phase-block';
+    block.innerHTML=`<div class="phase-hd"><span class="phase-badge ${ph.cls}">${ph.label}</span><div class="phase-title">${ph.title}</div></div><p class="phase-desc">${ph.desc}</p>`;
+    mods.forEach(m=>{
+      const jc=document.createElement('div');jc.className='jcard';
+      const trackCls=m.track==='Both tracks'?'rp-b':m.track==='DS track'?'rp-ds':'rp-a';
+      jc.innerHTML=`<div class="jcard-num">${m.num}</div><div><div class="jcard-name">${m.name}${m.isNew?'<span style="font-size:9px;font-weight:700;text-transform:uppercase;padding:1px 6px;border-radius:4px;background:#fff3ed;color:#e8500a;margin-left:7px;vertical-align:middle">New</span>':''}</div><div class="jcard-sub">${m.phase} · ${m.isElective?'Elective':'Core'} · ${m.dur}</div></div><div class="jcard-right"><span class="rpill ${trackCls}">${m.track}</span><span class="jcard-toggle">▾</span></div><div class="jcard-expand"><div class="exp-grid"><div class="exp-panel biz"><div class="exp-lbl">🍕 The Business Problem (Zomato / Blinkit)</div><div class="exp-txt">${m.story}</div></div><div><div class="exp-panel script" style="margin-bottom:10px"><div class="exp-lbl">🎙️ Your Sales Script</div><div class="exp-txt" style="font-style:italic">${m.script}</div></div><div class="exp-panel skills"><div class="exp-lbl">✓ What the learner can do after this</div><ul style="list-style:none;display:flex;flex-direction:column;gap:5px;margin-top:4px">${m.outcomes.map(o=>`<li style="font-size:12px;color:#1e3a8a;padding-left:16px;position:relative;line-height:1.55"><span style="position:absolute;left:0;color:#16a34a;font-weight:700">✓</span>${o}</li>`).join('')}</ul></div></div></div></div>`;
+      jc.onclick=function(e){const was=jc.classList.contains('open');document.querySelectorAll('.jcard.open').forEach(x=>x.classList.remove('open'));if(!was)jc.classList.add('open');};
+      block.appendChild(jc);
+    });
+    c.appendChild(block);
+  });
+}
+
+function renderTimeline(data,cid){
+  const c=document.getElementById(cid);
+  data.forEach((s,i)=>{
+    const div=document.createElement('div');div.className='rt-stage';
+    div.innerHTML=`<div class="rt-connector"></div><div class="rt-left"><div class="rt-phase-tag">${s.ph}</div><div class="rt-mod-name">${s.mod}${s.isNew?`<span class="rt-new-tag">New</span>`:''}</div><div class="rt-dot ${i<data.length-1?'filled':''}"></div></div><div class="rt-right"><div class="rt-role-cards">${s.roles.map(r=>`<div class="rt-role-card"><strong>${r}</strong><span>role now accessible</span></div>`).join('')}</div></div>`;
+    c.appendChild(div);
+  });
+}
+
+function showTrack(id,btn){
+  document.querySelectorAll('.rtb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.rt-flow').forEach(f=>f.classList.remove('on'));
+  document.getElementById('rt-'+id).classList.add('on');
+}
+
+function renderModules(){
+  const tabs=document.getElementById('mod-tabs');
+  const details=document.getElementById('mod-details');
+  const addFilter=(label,fn)=>{
+    const b=document.createElement('button');b.className='mf'+(label==='All'?' on':'');b.textContent=label;
+    b.onclick=function(){
+      document.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+      document.querySelectorAll('.mod-detail').forEach(d=>{
+        d.style.display=fn(d)?'block':'none';
+      });
+    };tabs.appendChild(b);
+  };
+  addFilter('All',()=>true);
+  ['Phase 1','Phase 2','Phase 3'].forEach(p=>addFilter(p,d=>d.dataset.phase===p));
+  addFilter('Electives only',d=>d.dataset.elective==='true');
+  addFilter('Core only',d=>d.dataset.elective==='false');
+
+  modules.forEach((m,idx)=>{
+    const d=document.createElement('div');d.className='mod-detail';
+    d.dataset.phase=m.phase;d.dataset.elective=String(m.isElective);
+    const prev=modules[idx-1],next=modules[idx+1];
+    d.innerHTML=`
+<div class="mod-header">
+  <div>
+    <div class="mod-num-badge">Module ${m.num} of ${modules.length} · ${m.dur}</div>
+    <div class="mod-title">${m.name}</div>
+    <div class="mod-meta">
+      <span class="tag ${m.phTag}">${m.phase}</span>
+      <span class="tag ${m.isElective?'tag-elective':'tag-core'}">${m.isElective?'Elective':'Core'}</span>
+      ${m.isNew?'<span class="tag tag-new">New in 3.0</span>':''}
+      <span class="tag" style="background:#f1f5f9;color:#475569">${m.track}</span>
+    </div>
+  </div>
+  <div class="mod-tools-box"><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#a8a29e;margin-bottom:4px">Tools covered</div>${m.tools}</div>
+</div>
+<div class="mod-body">
+  <div class="mod-col">
+    <div class="col-lbl">🍕 The Business Problem — Explained Simply</div>
+    <div class="story-box">
+      <div class="story-title">Real-world scenario (Zomato / Blinkit)</div>
+      <div class="story-txt">${m.story}</div>
+    </div>
+    <div class="analogy-box">
+      <div class="analogy-title">💡 Think of it this way</div>
+      <div class="analogy-txt">${m.analogy}</div>
+    </div>
+    <div class="col-lbl" style="margin-top:4px">✓ What the learner can do after this module</div>
+    <ul class="outcome-list">${m.outcomes.map(o=>`<li>${o}</li>`).join('')}</ul>
+  </div>
+  <div class="mod-col">
+    <div class="col-lbl">🎙️ Your Sales Script — Use This on the Call</div>
+    <div class="script-box">
+      <div class="script-title">Say this when explaining the module to a lead</div>
+      <div class="script-txt">${m.script}</div>
+    </div>
+    <div style="margin-top:16px">
+      <div class="col-lbl">💼 Roles this module unlocks or strengthens</div>
+      <div class="job-chips">${m.jobs.map(j=>`<div class="job-chip">${j}</div>`).join('')}</div>
+    </div>
+  </div>
+</div>
+<div class="mod-footer">
+  <button class="mod-nav-btn" onclick="jumpToMod('${prev?prev.id:''}')" ${!prev?'disabled':''}>← ${prev?'Module '+prev.num+': '+prev.name.slice(0,30)+'…':'–'}</button>
+  <button class="mod-nav-btn primary" onclick="jumpToMod('${next?next.id:''}')" ${!next?'disabled':''}>Module ${next?next.num:'–'}: ${next?next.name.slice(0,30)+'…':'–'} →</button>
+</div>`;
+    details.appendChild(d);
+  });
+}
+
+function jumpToMod(id){
+  if(!id)return;
+  document.querySelectorAll('.mf').forEach(x=>x.classList.remove('on'));
+  document.querySelector('.mf').classList.add('on');
+  document.querySelectorAll('.mod-detail').forEach(d=>d.style.display='block');
+  setTimeout(()=>{const el=document.getElementById('detail-'+modules.find(m=>m.id===id)?.id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},50);
+}
+
+const projects=[
+  {track:'Analytics track',c:'#ea580c',name:'Food Delivery Analytics System',roles:[{l:'Product Analyst',c:'rp-a'},{l:'Data Analyst',c:'rp-a'}],biz:'Zomato needs to understand why users who place their first order do not return. Business question: what happens between first order and churn — and what can the product team do about it?',what:'Full analytics system: funnel analysis across the ordering journey, cohort retention by user segment, and an automated AI-generated weekly insight report highlighting what changed and recommending action.',pitch:'"A working product analytics system — not a tutorial. Funnel work, cohort analysis, and AI narrative are all demonstrable in a Product Analyst interview. Every interviewer knows this problem. This project says: I have actually solved it."'},
+  {track:'Analytics track',c:'#f59e0b',name:'Content Platform Analytics',roles:[{l:'Data Analyst',c:'rp-a'},{l:'Content Analyst',c:'rp-a'}],biz:'A streaming platform needs to know which content keeps users watching — and which genres are silently driving churn after the first episode.',what:'Watch-time analysis by content type and segment, benchmarking with AI anomaly detection, and a retention dashboard showing which content decisions are working.',pitch:'"Retention analysis on streaming data is discussed in almost every product interview. Candidates who have actually built it — not just studied it — stand out immediately."'},
+  {track:'Analytics track',c:'#0284c7',name:'End-to-End Cloud Analytics Pipeline',roles:[{l:'Analytics Eng.',c:'rp-ds'},{l:'BI Engineer',c:'rp-ds'}],biz:'Blinkit\'s team needs a self-service dashboard showing live category performance — without requesting a data pull every time.',what:'Full pipeline from scratch: raw events in AWS S3, Glue transformation, Redshift warehouse, live Tableau dashboard refreshing every 15 minutes with AI-generated anomaly alerts.',pitch:'"Cloud infrastructure on a real portfolio is rare. A live Tableau dashboard connected to a Redshift warehouse they built themselves — that is what goes on the resume and opens BI and analytics engineering doors."'},
+  {track:'Data Science track',c:'#4338ca',name:'Smart Customer Intelligence Platform',roles:[{l:'Data Scientist',c:'rp-ds'},{l:'ML Engineer',c:'rp-ds'}],biz:'Zomato is spending marketing budget treating all 80M users the same. The team needs to know who the high-value segments are and design different strategies for each.',what:'Full segmentation (K-Means + DBSCAN), per-segment demand forecasting with XGBoost, dynamic pricing recommendations, and an interactive dashboard showing revenue impact by segment.',pitch:'"Two of the three most-tested DS interview topics — segmentation and demand forecasting — in one end-to-end system. Interviewers immediately recognise the problem."'},
+  {track:'Data Science track',c:'#0d9488',name:'Automated Quality Inspection System',roles:[{l:'ML Engineer',c:'rp-ds'},{l:'CV Engineer',c:'rp-ds'}],biz:'Blinkit needs to check 10,000 product images per week. Human review is not feasible at this volume.',what:'Fine-tuned YOLOv8 + EfficientNet detecting quality issues. Confidence scoring routes borderline cases to human reviewers. Full precision-recall analysis demonstrating business trade-off understanding.',pitch:'"CV portfolio evidence is genuinely rare. A learner who explains the precision-recall trade-off on a real inspection problem — and shows the working system — is immediately differentiated in any ML interview."'},
+  {track:'Data Science track',c:'#7c3aed',name:'Customer Support Intelligence Engine',roles:[{l:'NLP Engineer',c:'rp-ds'},{l:'Data Scientist',c:'rp-ds'}],biz:'Zomato gets 200,000 support tickets per week. Critical issues need to reach the right team in minutes, not hours.',what:'BERT classifier predicting issue type, urgency, and team ownership. Entity extraction for order IDs and restaurant names. Auto-routing before SLA breach with AI-drafted initial responses.',pitch:'"NLP applied to a real business problem — not movie reviews. Customer support intelligence is a live production system at every consumer company. This project shows production thinking."'},
+  {track:'Data Science track',c:'#0f766e',name:'Multi-Modal AI Search Engine',roles:[{l:'AI Engineer',c:'rp-ds'},{l:'ML Engineer',c:'rp-ds'}],biz:'Blinkit\'s ops team records every supplier meeting. Six months later, no one can find what was decided. All knowledge is locked in videos nobody rewatches.',what:'Ingests recordings, extracts transcripts and frame embeddings, creates searchable index. Query by text, get the exact video moment. Agentic retrieval layer decides whether to search transcript, frames, or both.',pitch:'"Multi-modal AI is the frontier. A working video-text search engine with agentic retrieval demonstrates exactly what AI engineering teams at PhonePe, Swiggy, and every funded startup are hiring for right now."'},
+];
+function renderProjects(){
+  const g=document.getElementById('proj-grid');
+  projects.forEach(p=>{
+    const d=document.createElement('div');d.className='pcard';
+    d.innerHTML=`<div class="pcard-top" style="background:${p.c}"></div><div class="pcard-body"><div class="pcard-track" style="color:${p.c}">${p.track}</div><div class="pcard-name">${p.name}</div><div class="pcard-roles">${p.roles.map(r=>`<span class="rpill ${r.c}">${r.l}</span>`).join('')}</div><div class="pcard-lbl">The business problem</div><div class="pcard-txt">${p.biz}</div><div class="pcard-lbl">What the learner builds</div><div class="pcard-txt">${p.what}</div><div class="pcard-pitch">${p.pitch}</div></div>`;
+    g.appendChild(d);
+  });
+}
+
 renderProfiles();
-updateTracker(1);
+renderJourney();
+renderTimeline(analyticsTrack,'rt-analytics');
+renderTimeline(dsTrack,'rt-ds');
+renderModules();
+renderProjects();
+
+// add IDs for scroll targets
+document.querySelectorAll('.mod-detail').forEach((d,i)=>{d.id='detail-'+modules[i].id;});
 </script>
 </body>
 </html>
